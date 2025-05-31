@@ -1,9 +1,7 @@
 import { FC } from "react";
-import DropdownMenu, { DropdownMenuProps } from "../DropdownMenu"
+import DropdownMenu, { DropdownMenuProps } from "../DropdownMenu";
 
-const Example: FC<DropdownMenuProps> = ({
-    children
-}) => {
+const Example: FC<DropdownMenuProps> = ({ children }) => {
   return (
     <div
       style={{
@@ -13,9 +11,7 @@ const Example: FC<DropdownMenuProps> = ({
         height: "100%",
       }}
     >
-      <DropdownMenu>
-        {children}
-      </DropdownMenu>
+      <DropdownMenu>{children}</DropdownMenu>
     </div>
   );
 };
