@@ -12,13 +12,18 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "npx prettier --write --parser typescript '**/*.{ts,tsx}'",
     "lint": "npx eslint . --ext .ts,.tsx --ignore-path .gitignore --fix",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@storybook/addon-docs": "^9.0.2",
+    "@storybook/addon-onboarding": "^9.0.2",
+    "@storybook/react-vite": "^9.0.2",
     "@types/react": "^19.1.6",
     "@typescript-eslint/eslint-plugin": "^8.33.0",
     "@typescript-eslint/parser": "^8.33.0",
@@ -29,6 +34,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-storybook": "^9.0.2",
     "prettier": "^3.5.3",
+    "storybook": "^9.0.2",
     "styled-components": "^6.1.18",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",

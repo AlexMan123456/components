@@ -4,11 +4,11 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import { ReactNode, useState } from "react";
 
-interface IProps {
+export interface DropdownMenuProps {
     children: ReactNode
 }
 
-function DropdownMenu({children}: IProps){
+function DropdownMenu({children}: DropdownMenuProps){
     const [anchorElement, setAnchorElement] = useState<HTMLElement | null>(null);
     const isDropdownOpen = !!anchorElement;
     
