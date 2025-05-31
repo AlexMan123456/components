@@ -1,8 +1,22 @@
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import { peerDependencies } from "./package.json";
+import react from "@vitejs/plugin-react";
+
+const muiPackages = [
+  "@mui/material",
+  "@mui/system",
+  "@mui/utils",
+  "@mui/icons-material",
+];
 
 export default defineConfig({
+  optimizeDeps: {
+    include: muiPackages,
+  },
+  ssr: {
+    noExternal: muiPackages,
+  },
   build: {
     lib: {
       entry: "./src/index.ts", // Specifies the entry point for building the library.
@@ -16,5 +30,5 @@ export default defineConfig({
     sourcemap: true, // Generates source maps for debugging.
     emptyOutDir: true, // Clears the output directory before building.
   },
-  plugins: [dts()], // Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
+  plugins: [dts(), react()], // Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
 });
