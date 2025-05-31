@@ -7,7 +7,7 @@
   "files": [
     "/dist"
   ],
-  "version": "1.1.0",
+  "version": "1.1.1",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "npx prettier --write --parser typescript '**/*.{ts,tsx}'",
