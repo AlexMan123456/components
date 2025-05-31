@@ -6,9 +6,15 @@ import { ReactNode, useState } from "react";
 
 export interface DropdownMenuProps {
   children: ReactNode;
+  isOpenIcon?: ReactNode;
+  isClosedIcon?: ReactNode;
 }
 
-function DropdownMenu({ children }: DropdownMenuProps) {
+function DropdownMenu({
+  children,
+  isOpenIcon = <ArrowDropUp />,
+  isClosedIcon = <ArrowDropDown />,
+}: DropdownMenuProps) {
   const [anchorElement, setAnchorElement] = useState<HTMLElement | null>(null);
   const isDropdownOpen = !!anchorElement;
 
@@ -19,7 +25,7 @@ function DropdownMenu({ children }: DropdownMenuProps) {
           setAnchorElement(event.currentTarget);
         }}
       >
-        {isDropdownOpen ? <ArrowDropUp /> : <ArrowDropDown />}
+        {isDropdownOpen ? isOpenIcon : isClosedIcon}
       </Button>
       <Menu
         anchorEl={anchorElement}
