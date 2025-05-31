@@ -1,5 +1,5 @@
 {
-  "name": "components",
+  "name": "@alextheman/components",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
