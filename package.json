@@ -7,7 +7,7 @@
   "files": [
     "/dist"
   ],
-  "version": "1.0.2",
+  "version": "1.0.3",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "npx prettier --write --parser typescript '**/*.{ts,tsx}'",
@@ -49,12 +49,10 @@
     "vite-plugin-dts": "^4.5.4"
   },
   "peerDependencies": {
-    "react": "^19.1.0",
-    "@mui/icons-material": "^7.1.0",
-    "@mui/material": "^7.1.0"
-  },
-  "dependencies": {
     "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0"
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
+    "react": "^19.1.0"
   }
 }
