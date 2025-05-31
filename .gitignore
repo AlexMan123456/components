@@ -5,3 +5,5 @@ dist
 #storybook build directory
 storybook-static
 *storybook.log
+
+alextheman-components-*
