@@ -5,7 +5,7 @@ import Menu from "@mui/material/Menu";
 import { ReactNode, useState } from "react";
 
 export interface DropdownMenuProps {
-  children: ReactNode;
+  children: ReactNode | ((closeMenu: () => void) => ReactNode);
   isOpenIcon?: ReactNode;
   isClosedIcon?: ReactNode;
 }
@@ -17,6 +17,10 @@ function DropdownMenu({
 }: DropdownMenuProps) {
   const [anchorElement, setAnchorElement] = useState<HTMLElement | null>(null);
   const isDropdownOpen = !!anchorElement;
+
+  function closeMenu() {
+    setAnchorElement(null);
+  }
 
   return (
     <Box>
@@ -34,7 +38,7 @@ function DropdownMenu({
           setAnchorElement(null);
         }}
       >
-        {children}
+        {typeof children === "function" ? children(closeMenu) : children}
       </Menu>
     </Box>
   );
