@@ -27,7 +27,7 @@ function FileInput({
   onChange,
   accept = Object.values(FileType),
   label = "Upload File",
-  multiple = false,
+  multiple,
   disabled,
 }: FileInputProps) {
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
