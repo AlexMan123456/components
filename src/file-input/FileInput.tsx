@@ -1,10 +1,11 @@
 import { Button, styled } from "@mui/material";
 import { CloudUpload } from "@mui/icons-material";
 import { ChangeEvent } from "react";
+import { FileType } from ".";
 
 export interface FileInputProps {
   onChange: (files: File[]) => void;
-  accept?: string[];
+  accept?: (FileType | string)[];
   label?: string;
   multiple?: boolean;
   disabled?: boolean;
@@ -24,13 +25,7 @@ const VisuallyHiddenInput = styled("input")({
 
 function FileInput({
   onChange,
-  accept = [
-    "application/pdf",
-    "image/png",
-    "image/jpeg",
-    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-  ],
+  accept = Object.values(FileType),
   label = "Upload File",
   multiple = false,
   disabled,

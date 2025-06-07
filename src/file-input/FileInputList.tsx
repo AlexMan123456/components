@@ -6,11 +6,12 @@ import ListItem from "@mui/material/ListItem";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ListItemText from "@mui/material/ListItemText";
+import { FileType } from ".";
 
 interface FileInputListProps {
   files: File[];
   setFiles: Dispatch<SetStateAction<File[]>>;
-  accept?: string[];
+  accept?: (FileType | string)[];
 }
 
 function FileInputList({ files, setFiles, accept }: FileInputListProps) {
