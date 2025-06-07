@@ -7,6 +7,7 @@ export interface FileInputProps {
   accept?: string[];
   label?: string;
   multiple?: boolean;
+  disabled?: boolean;
 }
 
 const VisuallyHiddenInput = styled("input")({
@@ -32,6 +33,7 @@ function FileInput({
   ],
   label = "Upload File",
   multiple = false,
+  disabled,
 }: FileInputProps) {
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const filesArray = Array.from(event.target.files ?? new FileList());
@@ -50,6 +52,7 @@ function FileInput({
         onChange={handleChange}
         multiple={multiple}
         accept={accept.join(",")}
+        disabled={disabled}
       />
     </Button>
   );
