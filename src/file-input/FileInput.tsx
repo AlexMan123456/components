@@ -6,6 +6,7 @@ export interface FileInputProps {
   onChange: (files: File[]) => void;
   accept?: string[];
   label?: string;
+  multiple?: boolean;
 }
 
 const VisuallyHiddenInput = styled("input")({
@@ -30,14 +31,10 @@ function FileInput({
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
   ],
   label = "Upload File",
+  multiple = false,
 }: FileInputProps) {
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const filesArray = Array.from(event.target.files ?? new FileList());
-    for (const file of filesArray) {
-      if (!accept.includes(file.type)) {
-        throw new Error("UNSUPPORTED_FILE_TYPE");
-      }
-    }
     onChange(filesArray);
   }
   return (
@@ -45,11 +42,15 @@ function FileInput({
       component="label"
       role={undefined}
       variant="outlined"
-      tabIndex={-1}
       startIcon={<CloudUpload />}
     >
       {label}
-      <VisuallyHiddenInput type="file" onChange={handleChange} multiple />
+      <VisuallyHiddenInput
+        type="file"
+        onChange={handleChange}
+        multiple={multiple}
+        accept={accept.join(",")}
+      />
     </Button>
   );
 }

@@ -22,7 +22,7 @@ function FileInputList({ files, setFiles, accept }: FileInputListProps) {
 
   return (
     <Box>
-      <FileInput onChange={onChange} accept={accept} />
+      <FileInput onChange={onChange} accept={accept} multiple={true} />
       <List>
         {files.map((file) => {
           return (
