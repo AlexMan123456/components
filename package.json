@@ -52,5 +52,8 @@
     "@mui/material": "^7.1.0",
     "react": "^19.1.0",
     "react-router-dom": "^7.6.2"
+  },
+  "dependencies": {
+    "@alextheman/utility": "^1.4.1"
   }
 }
