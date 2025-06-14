@@ -1,2 +1,1 @@
-export * from "../dropdown-menu";
-export * from "../screen-size-context";
+export { default as DropdownMenu } from "./DropdownMenu";
