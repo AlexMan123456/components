@@ -1,1 +1,4 @@
-export { ScreenSizeContext, ScreenSizeProvider } from "./ScreenSizeContext";
+export {
+  ScreenSizeContext,
+  ScreenSizeProvider,
+} from "src/contexts/ScreenSizeContext";
