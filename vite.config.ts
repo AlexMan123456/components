@@ -1,7 +1,13 @@
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
+// eslint-disable-next-line no-restricted-imports
 import { peerDependencies } from "./package.json";
 import react from "@vitejs/plugin-react";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const muiPackages = [
   "@mui/material",
@@ -32,4 +38,9 @@ export default defineConfig({
     minify: "esbuild",
   },
   plugins: [dts(), react()], // Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
+  resolve: {
+    alias: {
+      src: path.resolve(__dirname, "src"),
+    },
+  },
 });
