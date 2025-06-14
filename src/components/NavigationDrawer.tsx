@@ -121,8 +121,8 @@ interface MenuItem {
 
 export interface NavigationDrawerProps {
   title: string;
-  drawerWidth?: number;
   navItems: MenuItem[];
+  headerElements?: ReactNode;
   children: ReactNode;
 }
 
@@ -130,6 +130,7 @@ function NavigationDrawer({
   title,
   navItems,
   children,
+  headerElements,
 }: NavigationDrawerProps) {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
@@ -165,6 +166,7 @@ function NavigationDrawer({
           <Typography variant="h6" noWrap component="div">
             {title}
           </Typography>
+          {headerElements}
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
