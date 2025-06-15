@@ -7,7 +7,7 @@
   "files": [
     "dist"
   ],
-  "version": "2.5.0",
+  "version": "2.5.1",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "npx prettier --write --parser typescript '**/*.{ts,tsx}'",
@@ -53,12 +53,12 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^7.1.1",
     "@mui/material": "^7.1.1",
-    "react": "^19.1.0"
+    "react": "^19.1.0",
+    "react-router-dom": "^7.6.2"
   },
   "dependencies": {
     "@alextheman/utility": "^1.4.1",
     "common-tags": "^1.8.2",
-    "react-live": "^4.1.8",
-    "react-router-dom": "^7.6.2"
+    "react-live": "^4.1.8"
   }
 }
