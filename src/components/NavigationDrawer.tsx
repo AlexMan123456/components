@@ -133,7 +133,7 @@ function NavigationDrawer({
   headerElements,
 }: NavigationDrawerProps) {
   const theme = useTheme();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const location = useLocation();
 
   function handleDrawerOpen() {
