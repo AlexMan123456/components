@@ -21,7 +21,7 @@ function Playground({
     backgroundColor: "black",
     border: 0.3,
     borderRadius: 1,
-    paddingLeft: 2,
+    paddingX: 2,
     borderColor: "darkgray",
   };
   const defaultEditorStyles: SxProps<Theme> = {
