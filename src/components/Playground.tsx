@@ -2,7 +2,9 @@ import Box from "@mui/material/Box";
 import { SxProps, Theme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import { stripIndent } from "common-tags";
+import { useContext } from "react";
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from "react-live";
+import { ModeContext } from "src/contexts";
 
 export interface PlaygroundProps {
   code: string;
@@ -17,8 +19,9 @@ function Playground({
   previewStyles,
   editorStyles,
 }: PlaygroundProps) {
+  const { mode } = useContext(ModeContext);
   const defaultPreviewStyles: SxProps<Theme> = {
-    backgroundColor: "black",
+    backgroundColor: mode === "dark" ? "black" : "white",
     border: 0.3,
     borderRadius: 1,
     paddingX: 2,
