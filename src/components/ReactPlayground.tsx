@@ -6,19 +6,19 @@ import { useContext } from "react";
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from "react-live";
 import { ModeContext } from "src/contexts";
 
-export interface PlaygroundProps {
+export interface ReactPlaygroundProps {
   code: string;
   scope: Record<string, unknown>;
   previewStyles?: SxProps<Theme>;
-  editorStyles?: SxProps<Theme>;
+  noInline?: boolean;
 }
 
-function Playground({
+function ReactPlayground({
   code,
   scope,
   previewStyles,
-  editorStyles,
-}: PlaygroundProps) {
+  noInline,
+}: ReactPlaygroundProps) {
   const { mode } = useContext(ModeContext);
   const defaultPreviewStyles: SxProps<Theme> = {
     backgroundColor: mode === "dark" ? "black" : "white",
@@ -27,20 +27,12 @@ function Playground({
     paddingX: 2,
     borderColor: "darkgray",
   };
-  const defaultEditorStyles: SxProps<Theme> = {
-    border: 0.3,
-    borderRadius: 0.3,
-    borderColor: "darkgray",
-  };
   const allPreviewStyles = previewStyles
     ? { ...defaultPreviewStyles, ...previewStyles }
     : { ...defaultPreviewStyles };
-  const allEditorStyles = editorStyles
-    ? { ...defaultEditorStyles, ...editorStyles }
-    : { ...defaultEditorStyles };
   return (
     <Box sx={{ borderRadius: 1, border: 0.5, padding: 2 }}>
-      <LiveProvider code={stripIndent(code)} scope={scope}>
+      <LiveProvider code={stripIndent(code)} scope={scope} noInline={noInline}>
         <Typography variant="h5">Result</Typography>
         <Box sx={allPreviewStyles}>
           <LivePreview />
@@ -48,7 +40,13 @@ function Playground({
         <LiveError />
         <br />
         <Typography variant="h5">Code</Typography>
-        <Box sx={allEditorStyles}>
+        <Box
+          sx={{
+            border: 0.3,
+            borderRadius: 0.3,
+            borderColor: "darkgray",
+          }}
+        >
           <LiveEditor />
         </Box>
       </LiveProvider>
@@ -56,4 +54,4 @@ function Playground({
   );
 }
 
-export default Playground;
+export default ReactPlayground;
