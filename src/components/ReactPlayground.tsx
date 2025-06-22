@@ -11,6 +11,8 @@ export interface ReactPlaygroundProps {
   scope?: Record<string, unknown>;
   previewStyles?: SxProps<Theme>;
   noInline?: boolean;
+  enableTypeScript?: boolean;
+  language?: string;
 }
 
 function ReactPlayground({
@@ -18,6 +20,8 @@ function ReactPlayground({
   scope,
   previewStyles,
   noInline,
+  enableTypeScript,
+  language,
 }: ReactPlaygroundProps) {
   const { mode } = useContext(ModeContext);
   const defaultPreviewStyles: SxProps<Theme> = {
@@ -32,7 +36,13 @@ function ReactPlayground({
     : { ...defaultPreviewStyles };
   return (
     <Box sx={{ borderRadius: 1, border: 0.5, padding: 2 }}>
-      <LiveProvider code={stripIndent(code)} scope={scope} noInline={noInline}>
+      <LiveProvider
+        code={stripIndent(code)}
+        scope={scope}
+        noInline={noInline}
+        enableTypeScript={enableTypeScript}
+        language={language}
+      >
         <Typography variant="h5">Code</Typography>
         <Box
           sx={{
