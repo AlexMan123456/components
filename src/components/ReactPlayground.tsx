@@ -24,7 +24,7 @@ function ReactPlayground({
     backgroundColor: mode === "dark" ? "black" : "white",
     border: 0.3,
     borderRadius: 1,
-    paddingX: 2,
+    padding: 2,
     borderColor: "darkgray",
   };
   const allPreviewStyles = previewStyles
