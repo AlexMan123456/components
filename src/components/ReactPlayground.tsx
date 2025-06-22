@@ -33,12 +33,6 @@ function ReactPlayground({
   return (
     <Box sx={{ borderRadius: 1, border: 0.5, padding: 2 }}>
       <LiveProvider code={stripIndent(code)} scope={scope} noInline={noInline}>
-        <Typography variant="h5">Result</Typography>
-        <Box sx={allPreviewStyles}>
-          <LivePreview />
-        </Box>
-        <LiveError />
-        <br />
         <Typography variant="h5">Code</Typography>
         <Box
           sx={{
@@ -48,6 +42,12 @@ function ReactPlayground({
           }}
         >
           <LiveEditor />
+        </Box>
+        <br />
+        <Typography variant="h5">Result</Typography>
+        <Box sx={allPreviewStyles}>
+          <LivePreview />
+          <LiveError />
         </Box>
       </LiveProvider>
     </Box>
