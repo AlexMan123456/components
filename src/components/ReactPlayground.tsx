@@ -8,7 +8,7 @@ import { ModeContext } from "src/contexts";
 
 export interface ReactPlaygroundProps {
   code: string;
-  scope: Record<string, unknown>;
+  scope?: Record<string, unknown>;
   previewStyles?: SxProps<Theme>;
   noInline?: boolean;
 }
