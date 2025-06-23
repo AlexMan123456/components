@@ -7,12 +7,18 @@ const ModeContext = createContext({
   mode: "dark",
 });
 
+type Mode = "light" | "dark";
+
 interface ModeProviderProps {
   children: ReactNode;
+  mode?: Mode;
 }
 
-function ModeProvider({ children }: ModeProviderProps) {
-  const [mode, setMode] = useState<"light" | "dark">("dark");
+function ModeProvider({
+  children,
+  mode: modeProp = "dark",
+}: ModeProviderProps) {
+  const [mode, setMode] = useState<Mode>(modeProp);
 
   const theme = useMemo(() => {
     return createTheme({
