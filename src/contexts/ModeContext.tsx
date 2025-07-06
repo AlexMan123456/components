@@ -1,6 +1,6 @@
 import CssBaseline from "@mui/material/CssBaseline";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { createContext, useMemo, useState, type ReactNode } from "react";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { type ReactNode, createContext, useMemo, useState } from "react";
 
 const ModeContext = createContext({
   toggleMode: () => {},
