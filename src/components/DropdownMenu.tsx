@@ -2,7 +2,7 @@ import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
 import Box from "@mui/material/Box";
 import Button, { ButtonOwnProps } from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 export interface DropdownMenuProps {
   children: ReactNode | ((closeMenu: () => void) => ReactNode);
@@ -10,6 +10,7 @@ export interface DropdownMenuProps {
   variant?: ButtonOwnProps["variant"];
   isOpenIcon?: ReactNode;
   isClosedIcon?: ReactNode;
+  onToggle?: (isOpen: boolean) => void;
 }
 
 function DropdownMenu({
@@ -18,9 +19,16 @@ function DropdownMenu({
   variant = "contained",
   isOpenIcon = <ArrowDropUp />,
   isClosedIcon = <ArrowDropDown />,
+  onToggle,
 }: DropdownMenuProps) {
   const [anchorElement, setAnchorElement] = useState<HTMLElement | null>(null);
   const isDropdownOpen = !!anchorElement;
+
+  useEffect(() => {
+    if (onToggle) {
+      onToggle(isDropdownOpen);
+    }
+  }, [isDropdownOpen]);
 
   return (
     <Box>
