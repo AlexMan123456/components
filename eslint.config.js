@@ -62,6 +62,7 @@ export default tseslint.config(
           caughtErrorsIgnorePattern: "^_",
         },
       ],
+      "func-style": ["error", "declaration"]
     },
   },
 );
