@@ -4,6 +4,9 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 import importPlugin from "eslint-plugin-import";
+import reactPlugin from "eslint-plugin-react"
+
+const warnOnFixButErrorOnLint = process.env.ESLINT_MODE === "format" ? "warn" : "error"
 
 export default tseslint.config(
   { ignores: ["dist"] },
@@ -18,6 +21,7 @@ export default tseslint.config(
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
       import: importPlugin,
+      react: reactPlugin
     },
     settings: {
       "import/resolver": {
@@ -33,17 +37,17 @@ export default tseslint.config(
       ],
       "react-hooks/exhaustive-deps": "off",
       "import/no-unresolved":
-        process.env.ESLINT_MODE === "format" ? "warn" : "error",
-      eqeqeq: process.env.ESLINT_MODE === "format" ? "warn" : "error",
+        warnOnFixButErrorOnLint,
+      eqeqeq: warnOnFixButErrorOnLint,
       "no-console": "warn",
       "no-restricted-imports": [
-        process.env.ESLINT_MODE === "format" ? "warn" : "error",
+        warnOnFixButErrorOnLint,
         {
           paths: [
             {
               name: "@mui/material",
               message:
-                "Please use `import Component from \"@mui/material/Component\"` instead. See https://mui.com/material-ui/guides/minimizing-bundle-size/ for more information",
+                "Please use `import Component from \"@mui/material/Component\"` instead. See https://mui.com/material-ui/guides/minimizing-bundle-size/ for more information.",
             },
           ],
           patterns: [
@@ -55,14 +59,19 @@ export default tseslint.config(
         },
       ],
       "@typescript-eslint/no-unused-vars": [
-        process.env.ESLINT_MODE === "format" ? "warn" : "error",
+        warnOnFixButErrorOnLint,
         {
           argsIgnorePattern: "^_",
           varsIgnorePattern: "^_",
           caughtErrorsIgnorePattern: "^_",
         },
       ],
-      "func-style": ["error", "declaration"]
+      "func-style": ["error", "declaration", { allowArrowFunctions: false }],
+      "prefer-arrow-callback": ["error", { allowNamedFunctions: false }],
+      "no-param-reassign": "error",
+      "no-useless-rename": "error",
+      "sort-vars": "error",
+      "no-cond-assign": "error"
     },
   },
 );

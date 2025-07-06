@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 
 interface ScreenSizeProps {
   children: ReactNode;

@@ -1,8 +1,8 @@
 import {
+  type CSSObject,
+  type Theme,
   styled,
   useTheme,
-  type Theme,
-  type CSSObject,
 } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
@@ -22,7 +22,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import { Fragment, useState, type ReactNode } from "react";
+import { Fragment, type ReactNode, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { truncate } from "@alextheman/utility";
 
