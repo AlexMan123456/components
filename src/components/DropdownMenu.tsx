@@ -10,7 +10,8 @@ export interface DropdownMenuProps {
   variant?: ButtonOwnProps["variant"];
   isOpenIcon?: ReactNode;
   isClosedIcon?: ReactNode;
-  onToggle?: (isOpen: boolean) => void;
+  onOpen?: () => void;
+  onClose?: () => void;
 }
 
 function DropdownMenu({
@@ -19,14 +20,17 @@ function DropdownMenu({
   variant = "contained",
   isOpenIcon = <ArrowDropUp />,
   isClosedIcon = <ArrowDropDown />,
-  onToggle,
+  onOpen,
+  onClose,
 }: DropdownMenuProps) {
   const [anchorElement, setAnchorElement] = useState<HTMLElement | null>(null);
   const isDropdownOpen = !!anchorElement;
 
   useEffect(() => {
-    if (onToggle) {
-      onToggle(isDropdownOpen);
+    if (isDropdownOpen && onOpen) {
+      onOpen();
+    } else if (!isDropdownOpen && onClose) {
+      onClose();
     }
   }, [isDropdownOpen]);
 
