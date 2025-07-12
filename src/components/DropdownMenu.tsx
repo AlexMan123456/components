@@ -32,7 +32,7 @@ function DropdownMenu({
     } else if (!isDropdownOpen && onClose) {
       onClose();
     }
-  }, [isDropdownOpen]);
+  }, [anchorElement]);
 
   return (
     <Box>
