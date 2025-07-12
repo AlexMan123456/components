@@ -17,6 +17,7 @@ export interface CollapsableItemProps {
   openIcon?: ReactNode;
   closedIcon?: ReactNode;
   collapseProps?: Omit<CollapseProps, "in">;
+  useDefaultStyling?: boolean;
 }
 
 function CollapsableItem({
@@ -30,6 +31,7 @@ function CollapsableItem({
   collapseProps,
   openIcon = <ArrowDropUp />,
   closedIcon = <ArrowDropDown />,
+  useDefaultStyling = ButtonComponent === ButtonBase ? true : false,
 }: CollapsableItemProps) {
   const [isItemOpen, setIsItemOpen] = useState<boolean>(!!isInitiallyOpen);
 
@@ -49,20 +51,24 @@ function CollapsableItem({
             return !previouslyOpen;
           });
         }}
-        sx={{
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          paddingY: 1.5,
-          paddingX: 2,
-          textAlign: "center",
-          "&:hover":
-            ButtonComponent === ButtonBase
-              ? { backgroundColor: "action.hover" }
-              : null,
-          ...buttonStyles,
-        }}
+        sx={
+          useDefaultStyling
+            ? {
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                paddingY: 1.5,
+                paddingX: 2,
+                textAlign: "center",
+                "&:hover":
+                  ButtonComponent === ButtonBase
+                    ? { backgroundColor: "action.hover" }
+                    : null,
+                ...buttonStyles,
+              }
+            : buttonStyles
+        }
         aria-expanded={isItemOpen}
       >
         {buttonContents}
