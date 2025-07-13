@@ -10,7 +10,7 @@
   "version": "3.2.4",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write --parser typescript 'src/**/*.{ts,tsx}' && ESLINT_MODE=format eslint --fix 'src/**/*.{ts,tsx}'",
+    "format": "prettier --write --parser typescript 'src/**/*.{ts,tsx}' && ESLINT_MODE=fix eslint --fix 'src/**/*.{ts,tsx}'",
     "lint": "ESLINT_MODE=lint eslint 'src/**/*.{ts,tsx}' && prettier --check --parser typescript 'src/**/*.{ts,tsx}'",
     "build": "tsc && vite build",
     "storybook": "storybook dev -p 6006",

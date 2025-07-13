@@ -6,7 +6,7 @@ import tseslint from "typescript-eslint";
 import importPlugin from "eslint-plugin-import";
 import reactPlugin from "eslint-plugin-react"
 
-const warnOnFixButErrorOnLint = process.env.ESLINT_MODE === "format" ? "warn" : "error"
+const warnOnFixButErrorOnLint = process.env.ESLINT_MODE === "fix" ? "warn" : "error"
 
 export default tseslint.config(
   { ignores: ["dist"] },
