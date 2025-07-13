@@ -27,9 +27,11 @@ function DropdownMenu({
   const isDropdownOpen = !!anchorElement;
 
   useEffect(() => {
-    if (isDropdownOpen && onOpen) {
+    // Needed in case the global isDropdownOpen differs from what anchorElement says it should currently be.
+    const isOpen = !!anchorElement;
+    if (isOpen && onOpen) {
       onOpen();
-    } else if (!isDropdownOpen && onClose) {
+    } else if (!isOpen && onClose) {
       onClose();
     }
   }, [anchorElement]);
