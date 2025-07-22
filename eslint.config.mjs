@@ -1,3 +1,3 @@
-import alexBaseConfig from "@alextheman/eslint-config-typescript-react-base";
+import plugin from "@alextheman/eslint-plugin"
 
-export default alexBaseConfig;
+export default plugin.configs.alexTypeScriptReactBase
