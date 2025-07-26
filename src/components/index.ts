@@ -7,3 +7,4 @@ export { default as ExternalLink } from "src/components/ExternalLink";
 export { default as IconWithPopover } from "src/components/IconWithPopover";
 export { default as PopoverText } from "src/components/PopoverText";
 export { default as CollapsableItem } from "src/components/CollapsableItem";
+export { default as ListItemInternalLink } from "src/components/ListItemInternalLink";
