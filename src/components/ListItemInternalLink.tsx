@@ -7,6 +7,7 @@ import InternalLink from "src/components/InternalLink";
 export interface ListItemInternalLinkProps
   extends Omit<ListItemButtonProps, "href"> {
   children: ReactNode;
+  to: string;
 }
 
 function ListItemInternalLink({
