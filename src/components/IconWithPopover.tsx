@@ -10,7 +10,7 @@ import {
   useState,
 } from "react";
 
-export interface PopoverProps {
+export interface IconWithPopoverProps {
   icon:
     | (OverridableComponent<SvgIconTypeMap<unknown, "svg">> & {
         muiName: string;
@@ -28,7 +28,7 @@ function IconWithPopover({
   onClose,
   iconProps,
   children,
-}: PopoverProps) {
+}: IconWithPopoverProps) {
   const [anchorElement, setAnchorElement] = useState<Element | null>(null);
   const isPopoverOpen = !!anchorElement;
   const popoverId = useId();

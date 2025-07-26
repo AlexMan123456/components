@@ -114,7 +114,7 @@ const Drawer = styled(MuiDrawer, {
   ],
 }));
 
-interface MenuItem {
+export interface NavMenuItem {
   category: string;
   options: {
     label: string;
@@ -125,7 +125,7 @@ interface MenuItem {
 
 export interface NavigationDrawerProps {
   title: string;
-  navItems: MenuItem[];
+  navItems: NavMenuItem[];
   headerElements?: ReactNode;
   children: ReactNode;
 }
