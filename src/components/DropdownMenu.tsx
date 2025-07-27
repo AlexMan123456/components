@@ -1,8 +1,10 @@
 import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
 import Box from "@mui/material/Box";
-import Button, { ButtonOwnProps } from "@mui/material/Button";
+import type { ButtonOwnProps } from "@mui/material/Button";
+import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
-import { ReactNode, useEffect, useState } from "react";
+import type { ReactNode } from "react";
+import { useEffect, useState } from "react";
 
 export interface DropdownMenuProps {
   children: ReactNode | ((closeMenu: () => void) => ReactNode);

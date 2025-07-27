@@ -2,7 +2,8 @@ import ArrowDropDown from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUp from "@mui/icons-material/ArrowDropUp";
 import Box from "@mui/material/Box";
 import ButtonBase from "@mui/material/ButtonBase";
-import Collapse, { CollapseProps } from "@mui/material/Collapse";
+import type { CollapseProps } from "@mui/material/Collapse";
+import Collapse from "@mui/material/Collapse";
 import { type SxProps } from "@mui/material/styles";
 import { type ElementType, useEffect, useState, type ReactNode } from "react";
 
