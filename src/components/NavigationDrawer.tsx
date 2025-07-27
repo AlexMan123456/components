@@ -1,14 +1,7 @@
-import {
-  type CSSObject,
-  type Theme,
-  styled,
-  useTheme,
-} from "@mui/material/styles";
+import { type CSSObject, type Theme, styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
-import MuiAppBar, {
-  type AppBarProps as MuiAppBarProps,
-} from "@mui/material/AppBar";
+import MuiAppBar, { type AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -130,12 +123,7 @@ export interface NavigationDrawerProps {
   children: ReactNode;
 }
 
-function NavigationDrawer({
-  title,
-  navItems,
-  children,
-  headerElements,
-}: NavigationDrawerProps) {
+function NavigationDrawer({ title, navItems, children, headerElements }: NavigationDrawerProps) {
   const theme = useTheme();
   const [open, setOpen] = useState(true);
   const location = useLocation();
@@ -176,11 +164,7 @@ function NavigationDrawer({
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "rtl" ? (
-              <ChevronRightIcon />
-            ) : (
-              <ChevronLeftIcon />
-            )}
+            {theme.direction === "rtl" ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
         <Divider />
@@ -188,19 +172,12 @@ function NavigationDrawer({
           return (
             <Fragment key={item.category}>
               <List>
-                <Typography
-                  variant={open ? "h5" : "h6"}
-                  paddingLeft={open ? 2 : 1}
-                >
+                <Typography variant={open ? "h5" : "h6"} paddingLeft={open ? 2 : 1}>
                   {open ? item.category : truncate(item.category, 4)}
                 </Typography>
                 {item.options.map((option) => {
                   return (
-                    <ListItem
-                      key={option.to}
-                      disablePadding
-                      sx={{ display: "block" }}
-                    >
+                    <ListItem key={option.to} disablePadding sx={{ display: "block" }}>
                       <ListItemButton
                         sx={[
                           {

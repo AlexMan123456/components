@@ -9,11 +9,7 @@ function PopoverText({ text, sx, ...typographyProps }: PopoverTextProps) {
     <>
       {text.split("\n").map((line, index) => {
         return (
-          <Typography
-            key={index}
-            sx={{ margin: 1, ...sx }}
-            {...typographyProps}
-          >
+          <Typography key={index} sx={{ margin: 1, ...sx }} {...typographyProps}>
             {line}
           </Typography>
         );

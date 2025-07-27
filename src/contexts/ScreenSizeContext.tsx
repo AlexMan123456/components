@@ -18,11 +18,7 @@ const ScreenSizeContext = createContext<ScreenSizeContextValue>({
   isLargeScreen: false,
 });
 
-function ScreenSizeProvider({
-  children,
-  largeScreenWidth,
-  largeScreenHeight,
-}: ScreenSizeProps) {
+function ScreenSizeProvider({ children, largeScreenWidth, largeScreenHeight }: ScreenSizeProps) {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState<number>(window.innerHeight);
 
@@ -58,12 +54,7 @@ function ScreenSizeProvider({
 
   useEffect(() => {
     setIsLargeScreen(
-      largeScreenCondition(
-        windowWidth,
-        windowHeight,
-        largeScreenWidth,
-        largeScreenHeight,
-      ),
+      largeScreenCondition(windowWidth, windowHeight, largeScreenWidth, largeScreenHeight),
     );
   }, [windowWidth, windowHeight, largeScreenWidth, largeScreenHeight]);
 
