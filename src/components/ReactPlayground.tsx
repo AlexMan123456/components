@@ -1,5 +1,5 @@
 import Box from "@mui/material/Box";
-import { SxProps, Theme } from "@mui/material/styles";
+import type { SxProps, Theme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import { stripIndent } from "common-tags";
 import { useContext } from "react";

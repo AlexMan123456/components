@@ -10,7 +10,6 @@ npx alex-c-line check-lockfile-version-discrepancy
 
 # Need to run format twice in case eslint --fix fixes things but doesn't match Prettier's formatting
 npm run format
-npm run format
 npm run lint
 
 # Warn in the console if there are source code changes but version number has not been changed
