@@ -62,9 +62,7 @@ function CollapsableItem({
                 paddingX: 2,
                 textAlign: "center",
                 "&:hover":
-                  ButtonComponent === ButtonBase
-                    ? { backgroundColor: "action.hover" }
-                    : null,
+                  ButtonComponent === ButtonBase ? { backgroundColor: "action.hover" } : null,
                 ...buttonStyles,
               }
             : buttonStyles

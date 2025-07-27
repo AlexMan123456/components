@@ -14,10 +14,7 @@ interface ModeProviderProps {
   mode?: Mode;
 }
 
-function ModeProvider({
-  children,
-  mode: modeProp = "dark",
-}: ModeProviderProps) {
+function ModeProvider({ children, mode: modeProp = "dark" }: ModeProviderProps) {
   const [mode, setMode] = useState<Mode>(modeProp);
 
   const theme = useMemo(() => {
