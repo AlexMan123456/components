@@ -1,15 +1,18 @@
 import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
 import Box from "@mui/material/Box";
 import type { ButtonOwnProps } from "@mui/material/Button";
-import Button from "@mui/material/Button";
+import MUIButton from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
-import type { ReactNode } from "react";
+import type { ElementType, ReactNode, MouseEvent as ReactMouseEvent } from "react";
 import { useEffect, useState } from "react";
 
 export interface DropdownMenuProps {
   children: ReactNode | ((closeMenu: () => void) => ReactNode);
-  label?: string;
-  variant?: ButtonOwnProps["variant"];
+  buttonChildren?: ReactNode;
+  button?: ElementType;
+  // Omit endIcon because the built-in isOpenIcon and isClosedIcon gives more control.
+  // onClick is also omitted because that controls anchorElement, and the onOpen/onClose functions can be used instead.
+  buttonProps?: Omit<ButtonOwnProps, "onClick" | "endIcon">;
   isOpenIcon?: ReactNode;
   isClosedIcon?: ReactNode;
   onOpen?: () => void;
@@ -18,8 +21,9 @@ export interface DropdownMenuProps {
 
 function DropdownMenu({
   children,
-  label = "Menu",
-  variant = "contained",
+  button: Button = MUIButton,
+  buttonChildren = "Menu",
+  buttonProps: incomingButtonProps,
   isOpenIcon = <ArrowDropUp />,
   isClosedIcon = <ArrowDropDown />,
   onOpen,
@@ -27,6 +31,20 @@ function DropdownMenu({
 }: DropdownMenuProps) {
   const [anchorElement, setAnchorElement] = useState<HTMLElement | null>(null);
   const isDropdownOpen = !!anchorElement;
+
+  const buttonProps: Record<string, unknown> = {
+    ...incomingButtonProps,
+    onClick: (event: ReactMouseEvent<HTMLElement>) => {
+      setAnchorElement(event.currentTarget);
+    },
+    "aria-controls": isDropdownOpen ? "dropdown-menu" : undefined,
+    "aria-haspopup": "true",
+    "aria-expanded": isDropdownOpen,
+  };
+
+  if (Button === MUIButton) {
+    buttonProps.endIcon = isDropdownOpen ? isOpenIcon : isClosedIcon;
+  }
 
   useEffect(() => {
     // Needed in case the global isDropdownOpen differs from what anchorElement says it should currently be.
@@ -40,16 +58,9 @@ function DropdownMenu({
 
   return (
     <Box>
-      <Button
-        endIcon={isDropdownOpen ? isOpenIcon : isClosedIcon}
-        onClick={(event) => {
-          setAnchorElement(event.currentTarget);
-        }}
-        variant={variant}
-      >
-        {label}
-      </Button>
+      <Button {...buttonProps}>{buttonChildren}</Button>
       <Menu
+        id="dropdown-menu"
         anchorEl={anchorElement}
         open={isDropdownOpen}
         onClose={() => {
