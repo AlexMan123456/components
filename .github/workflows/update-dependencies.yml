@@ -21,12 +21,21 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: "npm"
+
     - name: Setup GitHub user
       run: |
         git config --global user.name "AlexUpBot"
         git config --global user.email "alexupbot@bot.com"
+
     - name: Update dependencies
-      run: npx npm-check-updates -u
+      run: |
+        npx npm-check-updates -u
+        git add package.json package-lock.json
+        git commit -m "Update dependencies"
+    
+    - name: Change version number
+      run: npm run change-patch
+
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v6
       with:
