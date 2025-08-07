@@ -7,7 +7,7 @@
   "files": [
     "dist"
   ],
-  "version": "3.3.6",
+  "version": "3.4.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write --parser typescript 'src/**/*.{ts,tsx}' && ESLINT_MODE=fix eslint --fix 'src/**/*.{ts,tsx}'",
@@ -15,7 +15,6 @@
     "build": "tsc && vite build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "npm run build",
     "update-dependencies": "npx npm-check-updates -u && npm install",
     "change-major": "npm version major -m \"Change version number to v%s\"",
     "change-minor": "npm version minor -m \"Change version number to v%s\"",
@@ -31,6 +30,7 @@
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.32.0",
     "@types/common-tags": "^1.8.4",
+    "@types/node": "^24.2.0",
     "@types/react": "^19.1.9",
     "@typescript-eslint/eslint-plugin": "^8.39.0",
     "@typescript-eslint/parser": "^8.39.0",

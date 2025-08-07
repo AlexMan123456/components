@@ -26,3 +26,6 @@ export { type CollapsableItemProps } from "src/components/CollapsableItem";
 
 export { default as ListItemInternalLink } from "src/components/ListItemInternalLink";
 export { type ListItemInternalLinkProps } from "src/components/ListItemInternalLink";
+
+export { default as SwitchWithIcons } from "src/components/SwitchWithIcons";
+export { type SwitchWithIconsProps } from "src/components/SwitchWithIcons";
