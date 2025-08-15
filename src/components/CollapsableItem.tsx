@@ -5,7 +5,7 @@ import ButtonBase from "@mui/material/ButtonBase";
 import type { CollapseProps } from "@mui/material/Collapse";
 import Collapse from "@mui/material/Collapse";
 import { type SxProps } from "@mui/material/styles";
-import { type ElementType, useEffect, useState, type ReactNode } from "react";
+import { type ElementType, type ReactNode, useEffect, useState } from "react";
 
 export interface CollapsableItemProps {
   isInitiallyOpen?: boolean;

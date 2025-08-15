@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import type { ButtonOwnProps } from "@mui/material/Button";
 import MUIButton from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
-import type { ElementType, ReactNode, MouseEvent as ReactMouseEvent } from "react";
+import type { ElementType, MouseEvent as ReactMouseEvent, ReactNode } from "react";
 import { useEffect, useState } from "react";
 
 export interface DropdownMenuProps {

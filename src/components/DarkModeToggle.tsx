@@ -1,7 +1,8 @@
-import IconButton from "@mui/material/IconButton";
-import { useContext } from "react";
 import { DarkMode, LightMode } from "@mui/icons-material";
+import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
+import { useContext } from "react";
+
 import { ModeContext } from "src/contexts/ModeContext";
 
 function DarkModeToggle() {
