@@ -25,7 +25,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@alextheman/eslint-plugin": "^1.5.0",
+    "@alextheman/eslint-plugin": "^1.6.1",
     "@eslint/compat": "^1.3.2",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.33.0",
