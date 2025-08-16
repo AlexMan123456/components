@@ -30,7 +30,9 @@ function ModeProvider({ children, mode: modeProp = "dark" }: ModeProviderProps) 
       value={{
         mode,
         toggleMode: () => {
-          setMode((prev) => (prev === "light" ? "dark" : "light"));
+          setMode((prev) => {
+            return prev === "light" ? "dark" : "light";
+          });
         },
       }}
     >
