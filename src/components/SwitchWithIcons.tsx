@@ -1,9 +1,10 @@
-import Box from "@mui/material/Box";
 import type { CommonProps } from "@mui/material/OverridableComponent";
-import { styled } from "@mui/material/styles";
 import type { SwitchProps } from "@mui/material/Switch";
-import Switch from "@mui/material/Switch";
 import type { ComponentType, CSSProperties } from "react";
+
+import Box from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
+import Switch from "@mui/material/Switch";
 
 export interface SwitchWithIconsProps extends Omit<SwitchProps, "icon" | "checkedIcon"> {
   checkedIcon: ComponentType<{ style?: CSSProperties }>;
