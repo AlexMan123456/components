@@ -2,14 +2,14 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { createContext, type ReactNode, useMemo, useState } from "react";
 
-const ModeContext = createContext({
+export const ModeContext = createContext({
   toggleMode: () => {},
   mode: "dark",
 });
 
-type Mode = "light" | "dark";
+export type Mode = "light" | "dark";
 
-interface ModeProviderProps {
+export interface ModeProviderProps {
   children: ReactNode;
   mode?: Mode;
 }
@@ -44,4 +44,4 @@ function ModeProvider({ children, mode: modeProp = "dark" }: ModeProviderProps) 
   );
 }
 
-export { ModeContext, ModeProvider };
+export default ModeProvider;

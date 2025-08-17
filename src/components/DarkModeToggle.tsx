@@ -3,7 +3,7 @@ import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import { useContext } from "react";
 
-import { ModeContext } from "src/contexts/ModeContext";
+import { ModeContext } from "src/providers/ModeProvider";
 
 function DarkModeToggle() {
   const { mode, toggleMode } = useContext(ModeContext);
