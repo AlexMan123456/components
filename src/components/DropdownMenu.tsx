@@ -5,7 +5,7 @@ import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
 import Box from "@mui/material/Box";
 import MUIButton from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export interface DropdownMenuProps {
   children: ReactNode | ((closeMenu: () => void) => ReactNode);
@@ -31,7 +31,9 @@ function DropdownMenu({
   onClose,
 }: DropdownMenuProps) {
   const [anchorElement, setAnchorElement] = useState<HTMLElement | null>(null);
-  const isDropdownOpen = !!anchorElement;
+  const isDropdownOpen = useMemo(() => {
+    return !!anchorElement;
+  }, [anchorElement]);
 
   const buttonProps: Record<string, unknown> = {
     ...incomingButtonProps,
@@ -48,14 +50,12 @@ function DropdownMenu({
   }
 
   useEffect(() => {
-    // Needed in case the global isDropdownOpen differs from what anchorElement says it should currently be.
-    const isOpen = !!anchorElement;
-    if (isOpen && onOpen) {
+    if (isDropdownOpen && onOpen) {
       onOpen();
-    } else if (!isOpen && onClose) {
+    } else if (!isDropdownOpen && onClose) {
       onClose();
     }
-  }, [anchorElement]);
+  }, [isDropdownOpen, onOpen, onClose]);
 
   return (
     <Box>
