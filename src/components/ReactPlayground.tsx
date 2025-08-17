@@ -6,7 +6,7 @@ import { stripIndent } from "common-tags";
 import { useContext } from "react";
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from "react-live";
 
-import { ModeContext } from "src/contexts";
+import { ModeContext } from "src/providers";
 
 export interface ReactPlaygroundProps {
   code: string;

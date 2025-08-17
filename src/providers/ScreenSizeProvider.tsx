@@ -2,19 +2,19 @@ import type { ReactNode } from "react";
 
 import { createContext, useEffect, useState } from "react";
 
-interface ScreenSizeProps {
+export interface ScreenSizeProps {
   children: ReactNode;
   largeScreenWidth?: number;
   largeScreenHeight?: number;
 }
 
-interface ScreenSizeContextValue {
+export interface ScreenSizeContextValue {
   isLargeScreen: boolean;
   windowWidth: number;
   windowHeight: number;
 }
 
-const ScreenSizeContext = createContext<ScreenSizeContextValue>({
+export const ScreenSizeContext = createContext<ScreenSizeContextValue>({
   windowWidth: 0,
   windowHeight: 0,
   isLargeScreen: false,
@@ -73,4 +73,4 @@ function ScreenSizeProvider({ children, largeScreenWidth, largeScreenHeight }: S
   );
 }
 
-export { ScreenSizeContext, ScreenSizeProvider };
+export default ScreenSizeProvider;
