@@ -1,15 +1,10 @@
+import type { OverridableComponent } from "@mui/material/OverridableComponent";
 import type { SvgIconTypeMap } from "@mui/material/SvgIcon";
+import type { ElementType, MouseEvent as ReactMouseEvent, ReactNode } from "react";
 
 import Box from "@mui/material/Box";
-import { type OverridableComponent } from "@mui/material/OverridableComponent";
 import Popover from "@mui/material/Popover";
-import {
-  type ElementType,
-  type MouseEvent as ReactMouseEvent,
-  type ReactNode,
-  useId,
-  useState,
-} from "react";
+import { useId, useState } from "react";
 
 export interface IconWithPopoverProps {
   icon:
