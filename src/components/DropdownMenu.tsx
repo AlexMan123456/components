@@ -68,11 +68,15 @@ function DropdownMenu({
           setAnchorElement(null);
         }}
       >
-        {typeof children === "function"
-          ? children(() => {
+        {typeof children === "function" ? (
+          <Box>
+            {children(() => {
               setAnchorElement(null);
-            })
-          : children}
+            })}
+          </Box>
+        ) : (
+          children
+        )}
       </Menu>
     </Box>
   );
