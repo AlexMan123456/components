@@ -1,5 +1,7 @@
-import ListItemButton, { type ListItemButtonProps } from "@mui/material/ListItemButton";
-import { type ReactNode } from "react";
+import type { ListItemButtonProps } from "@mui/material/ListItemButton";
+import type { ReactNode } from "react";
+
+import ListItemButton from "@mui/material/ListItemButton";
 
 import InternalLink from "src/components/InternalLink";
 

@@ -1,8 +1,12 @@
+import type { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
+import type { CSSObject, Theme } from "@mui/material/styles";
+import type { ReactNode } from "react";
+
 import { truncate } from "@alextheman/utility";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import MenuIcon from "@mui/icons-material/Menu";
-import MuiAppBar, { type AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
+import MuiAppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
@@ -13,10 +17,10 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import { type CSSObject, styled, type Theme, useTheme } from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { Fragment, type ReactNode, useState } from "react";
+import { Fragment, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const drawerWidth = 240;

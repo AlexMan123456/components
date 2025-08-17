@@ -1,6 +1,8 @@
+import type { ReactNode } from "react";
+
 import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { createContext, type ReactNode, useMemo, useState } from "react";
+import { createContext, useMemo, useState } from "react";
 
 export const ModeContext = createContext({
   toggleMode: () => {},

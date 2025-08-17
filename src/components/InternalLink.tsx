@@ -1,5 +1,7 @@
-import Link, { type LinkProps } from "@mui/material/Link";
-import { type ReactNode } from "react";
+import type { LinkProps } from "@mui/material/Link";
+import type { ReactNode } from "react";
+
+import Link from "@mui/material/Link";
 import { Link as ReactDOMLink } from "react-router-dom";
 
 export interface InternalLinkProps extends Omit<LinkProps, "href"> {
