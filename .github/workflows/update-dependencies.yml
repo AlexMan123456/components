@@ -1,6 +1,7 @@
 name: Update Dependencies
-on: 
-  workflow_dispatch:
+on:
+  schedule:
+  - cron: 0 0 * * 6
 
 permissions:
   contents: write
@@ -9,6 +10,8 @@ permissions:
 jobs:
   update-dependencies:
     runs-on: ubuntu-latest
+    env:
+      HUSKY: 0
     
     strategy:
       matrix:
@@ -21,21 +24,20 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: "npm"
-
     - name: Setup GitHub user
       run: |
         git config --global user.name "AlexUpBot"
         git config --global user.email "alexupbot@bot.com"
-
     - name: Update dependencies
       run: |
+        cp package-lock.json package-lock-backup.json
         npx npm-check-updates -u
-        git add package.json package-lock.json
-        git commit -m "Update dependencies"
-    
-    - name: Change version number
-      run: npm run change-patch
-
+        if ! npm install; then
+          echo "npm install failed, restoring lockfile"
+          mv package-lock-backup.json package-lock.json
+        else
+          rm -f package-lock-backup.json
+        fi
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v6
       with:
@@ -44,3 +46,4 @@ jobs:
         base: main
         commit-message: Update dependencies
         title: "Update dependencies"
+
