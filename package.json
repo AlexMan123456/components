@@ -1,5 +1,9 @@
 {
   "name": "@alextheman/components",
+  "version": "3.5.3",
+  "description": "A package containing common React components used across my projects",
+  "license": "ISC",
+  "author": "alextheman",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -7,26 +11,26 @@
   "files": [
     "dist"
   ],
-  "version": "3.5.3",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write --parser typescript 'src/**/*.{ts,tsx}' && eslint --fix --suppress-all 'src/**/*.{ts,tsx}' && rm -f eslint-suppressions.json",
-    "lint": "tsc --noEmit && eslint 'src/**/*.{ts,tsx}' && prettier --check --parser typescript 'src/**/*.{ts,tsx}'",
     "build": "tsc && vite build",
-    "create-local-package": "rm -f alextheman-components-*.tgz && npm pack",
-    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "update-dependencies": "bash -c 'npx npm-check-updates -u \"$@\" && npm install' --",
     "change-major": "npm version major -m \"Change version number to v%s\"",
     "change-minor": "npm version minor -m \"Change version number to v%s\"",
-    "change-patch": "npm version patch -m \"Change version number to v%s\""
+    "change-patch": "npm version patch -m \"Change version number to v%s\"",
+    "create-local-package": "rm -f alextheman-components-*.tgz && npm pack",
+    "format": "prettier --write --parser typescript \"src/**/*.{ts,tsx}\" && eslint --fix --suppress-all \"src/**/*.{ts,tsx}\" \"package.json\" && rm -f eslint-suppressions.json",
+    "lint": "tsc --noEmit && eslint \"src/**/*.{ts,tsx}\" \"package.json\" && prettier --check --parser typescript \"src/**/*.{ts,tsx}\"",
+    "storybook": "storybook dev -p 6006",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update-dependencies": "bash -c 'npx npm-check-updates -u \"$@\" && npm install' --"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "dependencies": {
+    "@alextheman/utility": "^1.14.0",
+    "common-tags": "^1.8.2",
+    "react-live": "^4.1.8"
+  },
   "devDependencies": {
-    "@alextheman/eslint-plugin": "^1.8.1",
+    "@alextheman/eslint-plugin": "^1.13.0",
     "@eslint/compat": "^1.3.2",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.34.0",
@@ -51,10 +55,5 @@
     "@mui/material": "^7.3.1",
     "react": "^19.1.0",
     "react-router-dom": "^7.6.2"
-  },
-  "dependencies": {
-    "@alextheman/utility": "^1.14.0",
-    "common-tags": "^1.8.2",
-    "react-live": "^4.1.8"
   }
 }
