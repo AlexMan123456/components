@@ -13,6 +13,7 @@
     "format": "prettier --write --parser typescript 'src/**/*.{ts,tsx}' && eslint --fix --suppress-all 'src/**/*.{ts,tsx}' && rm -f eslint-suppressions.json",
     "lint": "tsc --noEmit && eslint 'src/**/*.{ts,tsx}' && prettier --check --parser typescript 'src/**/*.{ts,tsx}'",
     "build": "tsc && vite build",
+    "create-local-package": "rm -f alextheman-components-*.tgz && npm pack",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "update-dependencies": "bash -c 'npx npm-check-updates -u \"$@\" && npm install' --",
