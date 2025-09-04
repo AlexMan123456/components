@@ -17,7 +17,7 @@
     "change-major": "npm version major -m \"Change version number to v%s\"",
     "change-minor": "npm version minor -m \"Change version number to v%s\"",
     "change-patch": "npm version patch -m \"Change version number to v%s\"",
-    "create-local-package": "rm -f alextheman-components-*.tgz && npm pack",
+    "create-local-package": "npm run build && rm -f alextheman-components-*.tgz && npm pack",
     "format": "prettier --write --parser typescript \"src/**/*.{ts,tsx}\" && eslint --fix --suppress-all \"src/**/*.{ts,tsx}\" \"package.json\" && rm -f eslint-suppressions.json",
     "lint": "tsc --noEmit && eslint \"src/**/*.{ts,tsx}\" \"package.json\" && prettier --check --parser typescript \"src/**/*.{ts,tsx}\"",
     "storybook": "storybook dev -p 6006",
