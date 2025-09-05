@@ -35,6 +35,8 @@ jobs:
           echo "Dependency update pull request already exists (#$PULL_REQUEST_ID). Exiting."
           exit 1
         fi
+      env:
+        GH_TOKEN: ${{ secrets.PAT_GITHUB }}
     - name: Update dependencies
       run: |
         cp package-lock.json package-lock-backup.json
