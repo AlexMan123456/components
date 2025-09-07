@@ -1,7 +1,8 @@
 import type { ButtonOwnProps } from "@mui/material/Button";
 import type { ElementType, MouseEvent as ReactMouseEvent, ReactNode } from "react";
 
-import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
+import ArrowDropDown from "@mui/icons-material/ArrowDropDown";
+import ArrowDropUp from "@mui/icons-material/ArrowDropUp";
 import Box from "@mui/material/Box";
 import MUIButton from "@mui/material/Button";
 import Menu from "@mui/material/Menu";

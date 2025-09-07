@@ -1,6 +1,6 @@
 {
   "name": "@alextheman/components",
-  "version": "3.5.3",
+  "version": "3.5.4",
   "description": "A package containing common React components used across my projects",
   "license": "ISC",
   "author": "alextheman",
@@ -30,7 +30,7 @@
     "react-live": "^4.1.8"
   },
   "devDependencies": {
-    "@alextheman/eslint-plugin": "^1.13.0",
+    "@alextheman/eslint-plugin": "^1.13.7",
     "@eslint/compat": "^1.3.2",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.35.0",
