@@ -10,19 +10,19 @@ import ListItemText from "@mui/material/ListItemText";
 
 import FileInput from "src/components/FileInput";
 
-export interface FileInputListProps extends Omit<FileInputProps, "onChange"> {
+export interface FileInputListProps extends Omit<FileInputProps, "onFileInput"> {
   files: File[];
   setFiles: Dispatch<SetStateAction<File[]>>;
 }
 
 function FileInputList({ files, setFiles, ...fileInputProps }: FileInputListProps) {
-  function onChange(newFiles: File[]) {
+  function onFileInput(newFiles: File[]) {
     setFiles((oldFiles) => {
       return [...oldFiles, ...newFiles];
     });
   }
 
-  const newFileInputProps = { ...fileInputProps, onChange };
+  const newFileInputProps = { ...fileInputProps, onFileInput };
   if (newFileInputProps?.multiple === undefined) {
     newFileInputProps.multiple = true;
   }
