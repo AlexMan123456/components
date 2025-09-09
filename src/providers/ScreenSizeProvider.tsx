@@ -28,7 +28,7 @@ function ScreenSizeProvider({ children, largeScreenWidth, largeScreenHeight }: S
     width: number,
     height: number,
     largeScreenWidth: number = 669,
-    largeScreenHeight: number = 650,
+    largeScreenHeight: number = 600,
   ): boolean {
     return width > largeScreenWidth && height > largeScreenHeight;
   }
