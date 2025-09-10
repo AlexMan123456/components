@@ -1,6 +1,6 @@
 {
   "name": "@alextheman/components",
-  "version": "3.8.1",
+  "version": "4.0.0",
   "description": "A package containing common React components used across my projects",
   "license": "ISC",
   "author": "alextheman",
