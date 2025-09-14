@@ -8,6 +8,8 @@ on:
 
 jobs:
   ci:
-    uses: AlexMan123456/github-actions/.github/workflows/ci.yml@v1.2.8
-    with:
-      run-tests: false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: AlexMan123456/github-actions/npm-ci@388de78b445a39345f8fc5051d50a749cd0b1676 # v1.3.0
+        with:
+          run-tests: false
