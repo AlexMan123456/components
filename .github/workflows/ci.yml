@@ -10,6 +10,6 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: AlexMan123456/github-actions/npm-ci@388de78b445a39345f8fc5051d50a749cd0b1676 # v1.3.0
+      - uses: AlexMan123456/github-actions/npm-ci@4d51e9fa5acb173de967108f078c9af7e0fa0450 # v1.3.6
         with:
           run-tests: false
