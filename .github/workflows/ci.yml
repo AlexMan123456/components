@@ -8,6 +8,6 @@ on:
 
 jobs:
   ci:
-    uses: AlexMan123456/github-actions/.github/workflows/ci.yml@v1.0.2
+    uses: AlexMan123456/github-actions/.github/workflows/ci.yml@v1.2.8
     with:
       run-tests: false
