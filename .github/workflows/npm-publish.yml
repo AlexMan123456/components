@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-      - uses: AlexMan123456/github-actions/npm-publish@4d51e9fa5acb173de967108f078c9af7e0fa0450 # v1.3.6
+      - uses: AlexMan123456/github-actions/npm-publish@f9f7f6f0bc1d98e3b89586611cc3a0a2922aa280 # v1.3.7
         with:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
