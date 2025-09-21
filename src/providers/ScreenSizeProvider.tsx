@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-deprecated */
 import type { ReactNode } from "react";
 
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 export interface ScreenSizeProps {
   children: ReactNode;
@@ -14,11 +15,18 @@ export interface ScreenSizeContextValue {
   windowHeight: number;
 }
 
+/**
+ * @deprecated Direct use of ScreenSizeContext is deprecated. Please use useScreenSize hook instead.
+ */
 export const ScreenSizeContext = createContext<ScreenSizeContextValue>({
   windowWidth: 0,
   windowHeight: 0,
   isLargeScreen: false,
 });
+
+export function useScreenSize() {
+  return useContext(ScreenSizeContext);
+}
 
 function ScreenSizeProvider({ children, largeScreenWidth, largeScreenHeight }: ScreenSizeProps) {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
