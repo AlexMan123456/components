@@ -2,12 +2,11 @@ import DarkMode from "@mui/icons-material/DarkMode";
 import LightMode from "@mui/icons-material/LightMode";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
-import { useContext } from "react";
 
-import { ModeContext } from "src/providers/ModeProvider";
+import { useMode } from "src/providers";
 
 function DarkModeToggle() {
-  const { mode, toggleMode } = useContext(ModeContext);
+  const { mode, toggleMode } = useMode();
 
   return (
     <Tooltip title={`Enable ${mode === "dark" ? "light" : "dark"} mode`}>

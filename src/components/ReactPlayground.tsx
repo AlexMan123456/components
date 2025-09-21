@@ -3,10 +3,9 @@ import type { SxProps, Theme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { stripIndent } from "common-tags";
-import { useContext } from "react";
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from "react-live";
 
-import { ModeContext } from "src/providers";
+import { useMode } from "src/providers";
 
 export interface ReactPlaygroundProps {
   code: string;
@@ -25,7 +24,7 @@ function ReactPlayground({
   enableTypeScript,
   language,
 }: ReactPlaygroundProps) {
-  const { mode } = useContext(ModeContext);
+  const { mode } = useMode();
   const defaultPreviewStyles: SxProps<Theme> = {
     backgroundColor: mode === "dark" ? "black" : "white",
     border: 0.3,
