@@ -5,6 +5,8 @@ export {
   useScreenSize,
   ScreenSizeContext,
 } from "src/providers/ScreenSizeProvider";
+export { default as SnackbarProvider, useSnackbar } from "src/providers/SnackbarProvider";
 
 export type { Mode, ModeProviderProps } from "src/providers/ModeProvider";
 export type { ScreenSizeProps, ScreenSizeContextValue } from "src/providers/ScreenSizeProvider";
+export type { SnackbarProviderProps } from "src/providers/SnackbarProvider";
