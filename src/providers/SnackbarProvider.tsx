@@ -19,7 +19,7 @@ const SnackbarContext = createContext<SnackbarContextValue | undefined>(undefine
 export function useSnackbar() {
   const context = useContext(SnackbarContext);
   if (!context) {
-    throw new Error("useSnackbar must be used within a SnackbarProvider");
+    throw new Error("SNACKBAR_CONTEXT_NOT_SET");
   }
   return context;
 }
