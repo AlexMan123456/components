@@ -1,6 +1,6 @@
 {
   "name": "@alextheman/components",
-  "version": "4.3.1",
+  "version": "4.4.0",
   "description": "A package containing common React components used across my projects",
   "license": "ISC",
   "author": "alextheman",
@@ -61,6 +61,7 @@
     "@mui/icons-material": "^7.3.1",
     "@mui/material": "^7.3.1",
     "react": "^19.1.0",
+    "react-hook-form": "^7.65.0",
     "react-router-dom": "^7.6.2"
   }
 }
