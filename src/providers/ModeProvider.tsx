@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-deprecated */
 import type { ReactNode } from "react";
 
 import CssBaseline from "@mui/material/CssBaseline";
