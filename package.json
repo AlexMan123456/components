@@ -1,6 +1,6 @@
 {
   "name": "@alextheman/components",
-  "version": "4.6.0",
+  "version": "4.7.0",
   "description": "A package containing common React components used across my projects",
   "license": "ISC",
   "author": "alextheman",
@@ -34,7 +34,7 @@
     "update-dependencies": "bash -c 'npx npm-check-updates -u \"$@\" && npm install' --"
   },
   "dependencies": {
-    "@alextheman/utility": "^1.22.0",
+    "@alextheman/utility": "^1.25.0",
     "common-tags": "^1.8.2",
     "react-live": "^4.1.8"
   },
