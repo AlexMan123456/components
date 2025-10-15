@@ -8,6 +8,9 @@ export interface LoaderContentProps {
   showOnError?: boolean;
 }
 
+/**
+ * @deprecated For better support with the query data itself, please use LoaderData instead. This component will be removed in the next major release.
+ */
 function LoaderContent({ children, loadingComponent, showOnError }: LoaderContentProps) {
   const { isLoading, loadingComponent: defaultLoadingComponent, error } = useLoader();
 
