@@ -34,7 +34,7 @@
     "update-dependencies": "bash -c 'npx npm-check-updates -u \"$@\" && npm install' --"
   },
   "dependencies": {
-    "@alextheman/utility": "^1.22.0",
+    "@alextheman/utility": "^1.25.0",
     "common-tags": "^1.8.2",
     "react-live": "^4.1.8"
   },

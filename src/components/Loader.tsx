@@ -1,20 +1,27 @@
+import type { DisallowUndefined } from "@alextheman/utility";
+import type { ReactNode } from "react";
 import type { LoaderProviderProps } from "src/providers";
 
 import CircularProgress from "@mui/material/CircularProgress";
 
-import { LoaderContent, LoaderError, LoaderProvider } from "src/providers";
+import { LoaderError, LoaderProvider } from "src/providers";
+import LoaderData from "src/providers/LoaderProvider/LoaderData";
 
-export type LoaderProps = LoaderProviderProps;
+export type LoaderProps<T> = Omit<LoaderProviderProps<T>, "children"> & {
+  children: ReactNode | ((data: DisallowUndefined<T>) => ReactNode);
+  onUndefined?: () => ReactNode | void;
+};
 
-function Loader({
+function Loader<T>({
   children,
+  onUndefined,
   loadingComponent = <CircularProgress />,
   ...loaderProviderProps
-}: LoaderProps) {
+}: LoaderProps<T>) {
   return (
-    <LoaderProvider loadingComponent={loadingComponent} {...loaderProviderProps}>
+    <LoaderProvider<T> loadingComponent={loadingComponent} {...loaderProviderProps}>
       <LoaderError />
-      <LoaderContent>{children}</LoaderContent>
+      <LoaderData<T> onUndefined={onUndefined}>{children}</LoaderData>
     </LoaderProvider>
   );
 }
