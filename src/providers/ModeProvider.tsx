@@ -4,10 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { createContext, useContext, useMemo, useState } from "react";
 
-/**
- * @deprecated Direct use of ModeContext is deprecated. Please use useMode hook instead.
- */
-export const ModeContext = createContext({
+const ModeContext = createContext({
   toggleMode: () => {},
   mode: "dark",
 });
