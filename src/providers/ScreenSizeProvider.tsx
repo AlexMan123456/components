@@ -14,10 +14,7 @@ export interface ScreenSizeContextValue {
   windowHeight: number;
 }
 
-/**
- * @deprecated Direct use of ScreenSizeContext is deprecated. Please use useScreenSize hook instead.
- */
-export const ScreenSizeContext = createContext<ScreenSizeContextValue>({
+const ScreenSizeContext = createContext<ScreenSizeContextValue>({
   windowWidth: 0,
   windowHeight: 0,
   isLargeScreen: false,
