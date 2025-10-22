@@ -1,24 +1,19 @@
 import type { LinkProps } from "@mui/material/Link";
 import type { ReactNode } from "react";
 
-import Link from "@mui/material/Link";
+import MUILink from "@mui/material/Link";
 
-export interface ExternalLinkProps extends Omit<LinkProps, "to"> {
-  href: string;
+export interface ExternalLinkProps extends Omit<LinkProps, "to" | "target" | "rel"> {
+  href: `https://${string}` | `http://${string}`;
+  to?: never;
   children: ReactNode;
 }
 
-function ExternalLink({
-  href,
-  children,
-  target = "_blank",
-  rel = "noopener noreferrer",
-  ...linkProps
-}: ExternalLinkProps) {
+function ExternalLink({ href, children, ...linkProps }: ExternalLinkProps) {
   return (
-    <Link component={"a"} href={href} target={target} rel={rel} {...linkProps}>
+    <MUILink component={"a"} href={href} target="_blank" rel="noopener noreferrer" {...linkProps}>
       {children}
-    </Link>
+    </MUILink>
   );
 }
 
