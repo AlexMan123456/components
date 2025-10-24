@@ -36,17 +36,17 @@
     "use-local-eslint-plugin": "npm --prefix ../eslint-plugin run create-local-package && npm uninstall @alextheman/eslint-plugin && npm install --save-dev ../eslint-plugin/alextheman-eslint-plugin-*.tgz"
   },
   "dependencies": {
-    "@alextheman/utility": "^1.25.0",
+    "@alextheman/utility": "^2.2.0",
     "common-tags": "^1.8.2",
     "react-live": "^4.1.8"
   },
   "devDependencies": {
-    "@alextheman/eslint-plugin": "^2.1.0",
+    "@alextheman/eslint-plugin": "^2.2.1",
     "@eslint/compat": "^1.4.0",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.38.0",
     "@types/common-tags": "^1.8.4",
-    "@types/node": "^24.8.1",
+    "@types/node": "^24.9.1",
     "@types/react": "^19.2.2",
     "eslint": "^9.38.0",
     "globals": "^16.4.0",
@@ -55,7 +55,7 @@
     "styled-components": "^6.1.19",
     "tsup": "^8.5.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.1"
+    "typescript-eslint": "^8.46.2"
   },
   "peerDependencies": {
     "@emotion/react": "^11.14.0",
