@@ -6,6 +6,7 @@ import { createContext, useContext } from "react";
 export interface LoaderProviderBaseProps<T> {
   isLoading: boolean;
   data?: T;
+  dataParser?: (data: unknown) => T;
   loadingComponent?: ReactNode;
 }
 

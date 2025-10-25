@@ -7,6 +7,7 @@ import { useLoader } from "src/providers/LoaderProvider";
 
 export interface LoaderDataProps<T> {
   children: ReactNode | ((data: DisallowUndefined<T>) => ReactNode);
+  dataParser?: (data: unknown) => T;
   loadingComponent?: ReactNode;
   onUndefined?: () => ReactNode | void;
   showOnError?: boolean;
@@ -14,15 +15,24 @@ export interface LoaderDataProps<T> {
 
 function LoaderData<T>({
   children,
+  dataParser: loaderDataParser,
   loadingComponent,
   onUndefined,
   showOnError,
 }: LoaderDataProps<T>) {
-  const { isLoading, data, loadingComponent: defaultLoadingComponent, error } = useLoader<T>();
+  const {
+    isLoading,
+    data,
+    dataParser: contextDataParser,
+    loadingComponent: contextLoadingComponent,
+    error,
+  } = useLoader<T>();
   const warnedOnce = useRef(false);
 
+  const dataParser = loaderDataParser ?? contextDataParser;
+
   if (isLoading) {
-    return <>{loadingComponent ?? defaultLoadingComponent}</>;
+    return <>{loadingComponent ?? contextLoadingComponent}</>;
   }
 
   if (error && !showOnError) {
@@ -43,6 +53,14 @@ function LoaderData<T>({
       return result ?? <></>;
     }
     return <></>;
+  }
+
+  if (dataParser) {
+    return typeof children === "function" ? (
+      <>{children(dataParser(data) as DisallowUndefined<T>)}</>
+    ) : (
+      <>{children}</>
+    );
   }
 
   return typeof children === "function" ? (
