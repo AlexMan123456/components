@@ -12,6 +12,7 @@ export { default as NavigationBottom } from "src/components/NavigationBottom";
 export { default as NavigationDrawer } from "src/components/NavigationDrawer";
 export { default as PopoverText } from "src/components/PopoverText";
 export { default as ReactPlayground } from "src/components/ReactPlayground";
+export { default as SkeletonRow } from "src/components/SkeletonRow";
 export { default as SubmitButton } from "src/components/SubmitButton";
 export { default as SwitchWithIcons } from "src/components/SwitchWithIcons";
 
@@ -28,5 +29,6 @@ export type { NavigationBottomProps, NavItemBottom } from "src/components/Naviga
 export type { NavigationDrawerProps, NavMenuItem } from "src/components/NavigationDrawer";
 export type { PopoverTextProps } from "src/components/PopoverText";
 export type { ReactPlaygroundProps } from "src/components/ReactPlayground";
+export type { SkeletonRowProps } from "src/components/SkeletonRow";
 export type { SubmitButtonProps } from "src/components/SubmitButton";
 export type { SwitchWithIconsProps } from "src/components/SwitchWithIcons";
