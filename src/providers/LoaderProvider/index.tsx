@@ -3,23 +3,25 @@ import type { ReactNode } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import { createContext, useContext } from "react";
 
-interface BaseProps<T> {
+export interface LoaderProviderBaseProps<T> {
   isLoading: boolean;
   data?: T;
   loadingComponent?: ReactNode;
 }
 
-interface PropsWithNoError<T> extends BaseProps<T> {
+export interface LoaderProviderPropsWithNoError<T> extends LoaderProviderBaseProps<T> {
   error?: never;
   errorComponent?: never;
 }
 
-interface PropsWithError<T> extends BaseProps<T> {
+export interface LoaderProviderPropsWithError<T> extends LoaderProviderBaseProps<T> {
   error: unknown;
   errorComponent?: ReactNode | ((error: unknown) => ReactNode);
 }
 
-export type LoaderContextValue<T> = PropsWithNoError<T> | PropsWithError<T>;
+export type LoaderContextValue<T> =
+  | LoaderProviderPropsWithNoError<T>
+  | LoaderProviderPropsWithError<T>;
 export type LoaderProviderProps<T> = LoaderContextValue<T> & { children: ReactNode };
 
 const LoaderContext = createContext<LoaderContextValue<unknown> | undefined>(undefined);
