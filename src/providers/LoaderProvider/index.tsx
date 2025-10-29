@@ -4,9 +4,13 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { createContext, useContext } from "react";
 
 export interface LoaderProviderBaseProps<T> {
+  /** The component to show when the data is being fetched. */
   isLoading: boolean;
+  /** The data being loaded. */
   data?: T;
+  /** A parser for the data. */
   dataParser?: (data: unknown) => T;
+  /** The component to show when loading. */
   loadingComponent?: ReactNode;
 }
 
@@ -16,7 +20,9 @@ export interface LoaderProviderPropsWithNoError<T> extends LoaderProviderBasePro
 }
 
 export interface LoaderProviderPropsWithError<T> extends LoaderProviderBaseProps<T> {
+  /** The error given if the request gave an error. */
   error: unknown;
+  /** The component to show if an error has been thrown. Note that this may not be provided unless the error prop has also been provided. */
   errorComponent?: ReactNode | ((error: unknown) => ReactNode);
 }
 
@@ -34,6 +40,9 @@ export function useLoader<T>(): LoaderContextValue<T> {
   return context as LoaderContextValue<T>;
 }
 
+/** A provider for a context that deals with state management when fetching data from an API.
+ * This may be used over Loader if you require more control over the placement of the error message and data display.
+ */
 function LoaderProvider<T>({
   children,
   loadingComponent = <CircularProgress />,

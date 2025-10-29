@@ -6,13 +6,21 @@ import { useRef } from "react";
 import { useLoader } from "src/providers/LoaderProvider";
 
 export interface LoaderDataProps<T> {
+  /** The elements to show after data has been loaded.
+   * This is best provided as a function with a data argument that guarantees the data will not be undefined by the time you receive it here.
+   */
   children: ReactNode | ((data: DisallowUndefined<T>) => ReactNode);
+  /** A parser for the data. */
   dataParser?: (data: unknown) => T;
+  /** The component to show when the data is being fetched. */
   loadingComponent?: ReactNode;
+  /** A function to run if the data is undefined and not loading. This may either return React components or nothing. */
   onUndefined?: () => ReactNode | void;
+  /** An option to show the children of this component if an error has been thrown. */
   showOnError?: boolean;
 }
 
+/** The component responsible for showing the data provided by LoaderProvider. */
 function LoaderData<T>({
   children,
   dataParser: loaderDataParser,

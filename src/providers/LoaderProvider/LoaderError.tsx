@@ -2,6 +2,7 @@ import Alert from "@mui/material/Alert";
 
 import { useLoader } from "src/providers/LoaderProvider";
 
+/** The component responsible for showing any errors provided by LoaderProvider. */
 function LoaderError() {
   const { error, errorComponent } = useLoader();
 
