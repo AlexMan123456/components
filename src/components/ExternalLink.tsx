@@ -11,7 +11,7 @@ export interface ExternalLinkProps extends Omit<LinkProps, "to" | "target" | "re
 
 function ExternalLink({ href, children, ...linkProps }: ExternalLinkProps) {
   return (
-    <MUILink component={"a"} href={href} target="_blank" rel="noopener noreferrer" {...linkProps}>
+    <MUILink component="a" href={href} target="_blank" rel="noopener noreferrer" {...linkProps}>
       {children}
     </MUILink>
   );
