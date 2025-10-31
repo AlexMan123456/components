@@ -36,19 +36,19 @@
     "use-local-eslint-plugin": "npm --prefix ../eslint-plugin run create-local-package && npm uninstall @alextheman/eslint-plugin && npm install --save-dev ../eslint-plugin/alextheman-eslint-plugin-*.tgz"
   },
   "dependencies": {
-    "@alextheman/utility": "^2.2.0",
+    "@alextheman/utility": "^2.5.0",
     "common-tags": "^1.8.2",
     "react-live": "^4.1.8"
   },
   "devDependencies": {
     "@alextheman/eslint-plugin": "^2.4.1",
-    "@eslint/compat": "^1.4.0",
+    "@eslint/compat": "^1.4.1",
     "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.38.0",
+    "@eslint/js": "^9.39.0",
     "@types/common-tags": "^1.8.4",
-    "@types/node": "^24.9.1",
+    "@types/node": "^24.9.2",
     "@types/react": "^19.2.2",
-    "eslint": "^9.38.0",
+    "eslint": "^9.39.0",
     "globals": "^16.4.0",
     "husky": "^9.1.7",
     "prettier": "^3.6.2",
