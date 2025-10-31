@@ -9,7 +9,7 @@ export interface LoaderProviderBaseProps<T> {
   /** The data being loaded. */
   data?: T;
   /** A parser for the data. */
-  dataParser?: (data: unknown) => T;
+  dataParser?: (data: unknown) => NonNullable<T>;
   /** The component to show when loading. */
   loadingComponent?: ReactNode;
 }
