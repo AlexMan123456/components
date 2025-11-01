@@ -4,13 +4,13 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { createContext, useContext } from "react";
 
 export interface LoaderProviderBaseProps<T> {
-  /** The component to show when the data is being fetched. */
+  /** The current loading status (true if loading, false if not) */
   isLoading: boolean;
   /** The data being loaded. */
   data?: T;
   /** A parser for the data. */
   dataParser?: (data: unknown) => NonNullable<T>;
-  /** The component to show when loading. */
+  /** The component to show when the data is being fetched. */
   loadingComponent?: ReactNode;
 }
 
