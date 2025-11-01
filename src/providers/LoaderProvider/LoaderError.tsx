@@ -61,12 +61,15 @@ function LoaderError({
       return <>{nullableComponent}</>;
     }
 
-    if (data === undefined && undefinedComponent) {
+    if (data === undefined) {
       if (!warnedOnce.current) {
         console.warn(UNDEFINED_MESSAGE);
         warnedOnce.current = true;
       }
-      return <>{undefinedComponent}</>;
+
+      if (undefinedComponent) {
+        return <>{undefinedComponent}</>;
+      }
     }
 
     if (data === null && nullComponent) {
