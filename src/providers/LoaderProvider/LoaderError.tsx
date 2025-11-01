@@ -72,6 +72,8 @@ function LoaderError({
     if (data === null && nullComponent) {
       return <>{nullComponent}</>;
     }
+
+    return <Alert severity="error">Failed to load data. Please try again later.</Alert>;
   }
 
   return <></>;
