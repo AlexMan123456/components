@@ -37,7 +37,7 @@ function LoaderError({
   nullComponent,
   nullableComponent,
 }: LoaderErrorProps) {
-  const { data, error, errorComponent: contextErrorComponent } = useLoader();
+  const { isLoading, data, error, errorComponent: contextErrorComponent } = useLoader();
   const warnedOnce = useRef(false);
 
   const errorComponent = propsErrorComponent ?? contextErrorComponent;
@@ -56,7 +56,7 @@ function LoaderError({
     );
   }
 
-  if (data === null || data === undefined) {
+  if (!isLoading && (data === null || data === undefined)) {
     if (nullableComponent) {
       return <>{nullableComponent}</>;
     }
