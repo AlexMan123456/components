@@ -37,7 +37,7 @@ function LoaderError({
   nullComponent,
   nullableComponent,
 }: LoaderErrorProps) {
-  const { data, error, errorComponent: contextErrorComponent } = useLoader();
+  const { isLoading, data, error, errorComponent: contextErrorComponent } = useLoader();
   const warnedOnce = useRef(false);
 
   const errorComponent = propsErrorComponent ?? contextErrorComponent;
@@ -56,22 +56,27 @@ function LoaderError({
     );
   }
 
-  if (data === null || data === undefined) {
+  if (!isLoading && (data === null || data === undefined)) {
     if (nullableComponent) {
       return <>{nullableComponent}</>;
     }
 
-    if (data === undefined && undefinedComponent) {
+    if (data === undefined) {
       if (!warnedOnce.current) {
         console.warn(UNDEFINED_MESSAGE);
         warnedOnce.current = true;
       }
-      return <>{undefinedComponent}</>;
+
+      if (undefinedComponent) {
+        return <>{undefinedComponent}</>;
+      }
     }
 
     if (data === null && nullComponent) {
       return <>{nullComponent}</>;
     }
+
+    return <Alert severity="error">Failed to load data. Please try again later.</Alert>;
   }
 
   return <></>;
