@@ -41,7 +41,7 @@
     "react-live": "^4.1.8"
   },
   "devDependencies": {
-    "@alextheman/eslint-plugin": "^2.4.1",
+    "@alextheman/eslint-plugin": "^2.5.0",
     "@eslint/compat": "^1.4.1",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.39.0",
