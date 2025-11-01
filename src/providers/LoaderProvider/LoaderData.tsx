@@ -11,8 +11,6 @@ export interface LoaderDataBaseProps<T> {
   dataParser?: (data: unknown) => NonNullable<T>;
   /** The component to show when the data is being fetched. */
   loadingComponent?: ReactNode;
-  /** An option to show the children of this component if an error has been thrown. */
-  showOnError?: boolean;
 }
 
 export interface LoaderDataPropsOnNullable<T> extends LoaderDataBaseProps<T> {
@@ -43,7 +41,6 @@ function LoaderData<T>({
   onNullable,
   onUndefined,
   onNull,
-  showOnError,
 }: LoaderDataProps<T>) {
   const {
     isLoading,
@@ -58,7 +55,7 @@ function LoaderData<T>({
     return <>{loadingComponent ?? contextLoadingComponent}</>;
   }
 
-  if (error && !showOnError) {
+  if (error) {
     return <></>;
   }
 
