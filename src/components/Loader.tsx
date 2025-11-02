@@ -6,8 +6,8 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { LoaderError, LoaderProvider } from "src/providers";
 import LoaderData from "src/providers/LoaderProvider/LoaderData";
 
-export type LoaderProps<T> = Omit<LoaderProviderProps<T>, "children" | "errorComponent"> &
-  LoaderErrorProps &
+export type LoaderProps<T> = Omit<LoaderProviderProps<T>, "children"> &
+  Omit<LoaderErrorProps, "errorComponent"> &
   Omit<LoaderDataProps<T>, "showOnError" | "onUndefined" | "onNull" | "onNullable">;
 
 /** An in-line component that deals with state management when fetching data from an API.
@@ -15,6 +15,7 @@ export type LoaderProps<T> = Omit<LoaderProviderProps<T>, "children" | "errorCom
  */
 function Loader<T>({
   children,
+  errorComponent,
   undefinedComponent,
   nullComponent,
   nullableComponent,
@@ -23,8 +24,9 @@ function Loader<T>({
 }: LoaderProps<T>) {
   return (
     <LoaderProvider<T> loadingComponent={loadingComponent} {...loaderProviderProps}>
-      {/* @ts-expect-error: We need to pass all three to LoaderError for the wrapper to work. It is ok as Loader will then do its own checks to enforce mutual exclusivity, and LoaderError knows how to deal with it anyway. */}
+      {/* @ts-expect-error: We need to pass all four to LoaderError for the wrapper to work. It is ok as Loader will then do its own checks to enforce mutual exclusivity, and LoaderError knows how to deal with it anyway. */}
       <LoaderError
+        errorComponent={errorComponent}
         undefinedComponent={undefinedComponent}
         nullComponent={nullComponent}
         nullableComponent={nullableComponent}
