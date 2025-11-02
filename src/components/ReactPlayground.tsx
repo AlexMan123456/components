@@ -1,4 +1,5 @@
 import type { SxProps, Theme } from "@mui/material/styles";
+import type { ComponentProps } from "react";
 
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -7,23 +8,11 @@ import { LiveEditor, LiveError, LivePreview, LiveProvider } from "react-live";
 
 import { useMode } from "src/providers";
 
-export interface ReactPlaygroundProps {
-  code: string;
-  scope?: Record<string, unknown>;
+export interface ReactPlaygroundProps extends ComponentProps<typeof LiveProvider> {
   previewStyles?: SxProps<Theme>;
-  noInline?: boolean;
-  enableTypeScript?: boolean;
-  language?: string;
 }
 
-function ReactPlayground({
-  code,
-  scope,
-  previewStyles,
-  noInline,
-  enableTypeScript,
-  language,
-}: ReactPlaygroundProps) {
+function ReactPlayground({ code, previewStyles, ...liveProviderProps }: ReactPlaygroundProps) {
   const { mode } = useMode();
   const defaultPreviewStyles: SxProps<Theme> = {
     backgroundColor: mode === "dark" ? "black" : "white",
@@ -37,13 +26,7 @@ function ReactPlayground({
     : { ...defaultPreviewStyles };
   return (
     <Box sx={{ borderRadius: 1, border: 0.5, padding: 2 }}>
-      <LiveProvider
-        code={stripIndent(code)}
-        scope={scope}
-        noInline={noInline}
-        enableTypeScript={enableTypeScript}
-        language={language}
-      >
+      <LiveProvider {...liveProviderProps} code={stripIndent(code ?? "")}>
         <Typography variant="h5">Code</Typography>
         <Box
           sx={{
