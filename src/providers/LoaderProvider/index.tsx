@@ -17,6 +17,7 @@ export interface LoaderProviderBaseProps<T> {
 export interface LoaderProviderPropsWithNoError<T> extends LoaderProviderBaseProps<T> {
   error?: never;
   errorComponent?: never;
+  logError?: never;
 }
 
 export interface LoaderProviderPropsWithError<T> extends LoaderProviderBaseProps<T> {
@@ -24,6 +25,8 @@ export interface LoaderProviderPropsWithError<T> extends LoaderProviderBaseProps
   error: unknown;
   /** The component to show if an error has been thrown. Note that this may not be provided unless the error prop has also been provided. */
   errorComponent?: ReactNode | ((error: unknown) => ReactNode);
+  /** Whether you want to log the error to the console or not. */
+  logError?: boolean;
 }
 
 export type LoaderContextValue<T> =
