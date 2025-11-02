@@ -8,6 +8,8 @@ import { useLoader } from "src/providers/LoaderProvider";
 export interface LoaderErrorBaseProps {
   /** The component to show if an error has been thrown. */
   errorComponent?: ReactNode | ((error: unknown) => ReactNode);
+  /** Whether you want to log the error to the console or not. */
+  logError?: boolean;
 }
 
 export interface LoaderErrorPropsWithUndefinedOrNull extends LoaderErrorBaseProps {
@@ -27,28 +29,38 @@ export interface LoaderErrorPropsWithNullable extends LoaderErrorBaseProps {
 
 export type LoaderErrorProps = LoaderErrorPropsWithUndefinedOrNull | LoaderErrorPropsWithNullable;
 
-const UNDEFINED_MESSAGE =
-  "Data is undefined after loading. This could either be an issue with the query or you have not passed in the data to LoaderProvider. Please double-check that you have provided data.";
-
 /** The component responsible for showing any errors provided by LoaderProvider. */
 function LoaderError({
   errorComponent: propsErrorComponent,
   undefinedComponent,
   nullComponent,
   nullableComponent,
+  logError: propsLogError,
 }: LoaderErrorProps) {
-  const { isLoading, data, error, errorComponent: contextErrorComponent } = useLoader();
+  const {
+    isLoading,
+    data,
+    error,
+    errorComponent: contextErrorComponent,
+    logError: contextLogError,
+  } = useLoader();
+  const logError = propsLogError ?? contextLogError;
   const warnedOnce = useRef(false);
 
   const errorComponent = propsErrorComponent ?? contextErrorComponent;
 
   if (error) {
+    if (logError && !warnedOnce.current) {
+      console.error(error);
+      warnedOnce.current = true;
+    }
     if (typeof errorComponent === "function") {
       return errorComponent(error);
     }
     if (errorComponent) {
       return <>{errorComponent}</>;
     }
+
     return (
       <Alert severity="error">
         {(error as Error)?.message ?? "An unknown error has occured. Please try again later."}
@@ -58,12 +70,18 @@ function LoaderError({
 
   if (!isLoading && (data === null || data === undefined)) {
     if (nullableComponent) {
+      if (logError && !warnedOnce.current) {
+        console.error("Data is nullable after loading.");
+        warnedOnce.current = true;
+      }
       return <>{nullableComponent}</>;
     }
 
     if (data === undefined) {
-      if (!warnedOnce.current) {
-        console.warn(UNDEFINED_MESSAGE);
+      if (logError && !warnedOnce.current) {
+        console.error(
+          "Data is undefined after loading. This could either be an issue with the query or you have not passed in the data to LoaderProvider. Please double-check that you have provided data.",
+        );
         warnedOnce.current = true;
       }
 
@@ -72,8 +90,15 @@ function LoaderError({
       }
     }
 
-    if (data === null && nullComponent) {
-      return <>{nullComponent}</>;
+    if (data === null) {
+      if (logError && !warnedOnce.current) {
+        console.error("Data is null after loading.");
+        warnedOnce.current = true;
+      }
+
+      if (nullComponent) {
+        return <>{nullComponent}</>;
+      }
     }
 
     return <Alert severity="error">Failed to load data. Please try again later.</Alert>;
