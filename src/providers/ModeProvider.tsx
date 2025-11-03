@@ -1,4 +1,5 @@
 import type { OptionalOnCondition } from "@alextheman/utility";
+import type { PaletteMode } from "@mui/material/styles";
 import type { ReactNode } from "react";
 import type { ContextHookOptions } from "src/types";
 
@@ -6,11 +7,12 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { createContext, useContext, useMemo, useState } from "react";
 
+/** @deprecated Please use `PaletteMode` from `@mui/material/styles` instead. */
 export type Mode = "light" | "dark";
 
 export interface ModeContextValue {
   toggleMode: () => void;
-  mode: Mode;
+  mode: PaletteMode;
 }
 
 const ModeContext = createContext<ModeContextValue>({
@@ -30,11 +32,11 @@ export function useMode<Strict extends boolean = true>({
 
 export interface ModeProviderProps {
   children: ReactNode;
-  mode?: Mode;
+  mode?: PaletteMode;
 }
 
 function ModeProvider({ children, mode: modeProp = "dark" }: ModeProviderProps) {
-  const [mode, setMode] = useState<Mode>(modeProp);
+  const [mode, setMode] = useState<PaletteMode>(modeProp);
 
   const theme = useMemo(() => {
     return createTheme({
