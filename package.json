@@ -36,7 +36,7 @@
     "use-local-eslint-plugin": "npm --prefix ../eslint-plugin run create-local-package && npm uninstall @alextheman/eslint-plugin && npm install --save-dev ../eslint-plugin/alextheman-eslint-plugin-*.tgz"
   },
   "dependencies": {
-    "@alextheman/utility": "^2.5.0",
+    "@alextheman/utility": "^2.8.0",
     "common-tags": "^1.8.2",
     "react-live": "^4.1.8"
   },

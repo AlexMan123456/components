@@ -1,4 +1,6 @@
+import type { OptionalOnCondition } from "@alextheman/utility";
 import type { ReactNode } from "react";
+import type { ContextHookOptions } from "src/types";
 
 import { createContext, useContext, useEffect, useState } from "react";
 
@@ -20,8 +22,14 @@ const ScreenSizeContext = createContext<ScreenSizeContextValue>({
   isLargeScreen: false,
 });
 
-export function useScreenSize() {
-  return useContext(ScreenSizeContext);
+export function useScreenSize<Strict extends boolean = true>({
+  strict = true as Strict,
+}: ContextHookOptions<Strict> = {}): OptionalOnCondition<Strict, ScreenSizeContextValue> {
+  const context = useContext(ScreenSizeContext);
+  if (strict && !context) {
+    throw new Error("SCREEN_SIZE_PROVIDER_NOT_FOUND");
+  }
+  return context;
 }
 
 function ScreenSizeProvider({ children, largeScreenWidth, largeScreenHeight }: ScreenSizeProps) {

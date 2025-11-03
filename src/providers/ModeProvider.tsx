@@ -1,19 +1,32 @@
+import type { OptionalOnCondition } from "@alextheman/utility";
 import type { ReactNode } from "react";
+import type { ContextHookOptions } from "src/types";
 
 import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { createContext, useContext, useMemo, useState } from "react";
 
-const ModeContext = createContext({
+export type Mode = "light" | "dark";
+
+export interface ModeContextValue {
+  toggleMode: () => void;
+  mode: Mode;
+}
+
+const ModeContext = createContext<ModeContextValue>({
   toggleMode: () => {},
   mode: "dark",
 });
 
-export function useMode() {
-  return useContext(ModeContext);
+export function useMode<Strict extends boolean = true>({
+  strict = true as Strict,
+}: ContextHookOptions<Strict> = {}): OptionalOnCondition<Strict, ModeContextValue> {
+  const context = useContext(ModeContext);
+  if (strict && !context) {
+    throw new Error("MODE_PROVIDER_NOT_FOUND");
+  }
+  return context;
 }
-
-export type Mode = "light" | "dark";
 
 export interface ModeProviderProps {
   children: ReactNode;
