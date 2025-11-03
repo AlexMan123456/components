@@ -1,4 +1,6 @@
+import type { OptionalOnCondition } from "@alextheman/utility";
 import type { ReactNode } from "react";
+import type { ContextHookOptions } from "src/types";
 
 import CircularProgress from "@mui/material/CircularProgress";
 import { createContext, useContext } from "react";
@@ -35,12 +37,15 @@ export type LoaderContextValue<T> =
 export type LoaderProviderProps<T> = LoaderContextValue<T> & { children: ReactNode };
 
 const LoaderContext = createContext<LoaderContextValue<unknown> | undefined>(undefined);
-export function useLoader<T>(): LoaderContextValue<T> {
+
+export function useLoader<T, Strict extends boolean = true>({
+  strict = true as Strict,
+}: ContextHookOptions<Strict> = {}): OptionalOnCondition<Strict, LoaderContextValue<T>> {
   const context = useContext(LoaderContext);
-  if (!context) {
-    throw new Error("LOADER_CONTEXT_NOT_SET");
+  if (strict && !context) {
+    throw new Error("LOADER_PROVIDER_NOT_FOUND");
   }
-  return context as LoaderContextValue<T>;
+  return context as OptionalOnCondition<Strict, LoaderContextValue<T>>;
 }
 
 /** A provider for a context that deals with state management when fetching data from an API.

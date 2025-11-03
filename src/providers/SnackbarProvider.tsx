@@ -1,5 +1,7 @@
+import type { OptionalOnCondition } from "@alextheman/utility";
 import type { AlertColor } from "@mui/material/Alert";
 import type { ReactNode } from "react";
+import type { ContextHookOptions } from "src/types";
 
 import { wait } from "@alextheman/utility";
 import Alert from "@mui/material/Alert";
@@ -16,12 +18,15 @@ export interface SnackbarContextValue {
 }
 
 const SnackbarContext = createContext<SnackbarContextValue | undefined>(undefined);
-export function useSnackbar() {
+
+export function useSnackbar<Strict extends boolean = true>({
+  strict = true as Strict,
+}: ContextHookOptions<Strict> = {}): OptionalOnCondition<Strict, SnackbarContextValue> {
   const context = useContext(SnackbarContext);
-  if (!context) {
-    throw new Error("SNACKBAR_CONTEXT_NOT_SET");
+  if (strict && !context) {
+    throw new Error("SNACKBAR_PROVIDER_NOT_FOUND");
   }
-  return context;
+  return context as OptionalOnCondition<Strict, SnackbarContextValue>;
 }
 
 function SnackbarProvider({ children, autoHideDuration = 5000 }: SnackbarProviderProps) {
