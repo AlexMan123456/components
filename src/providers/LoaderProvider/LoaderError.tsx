@@ -17,13 +17,13 @@ export interface LoaderErrorPropsWithUndefinedOrNull extends LoaderErrorBaseProp
   undefinedComponent?: ReactNode;
   /** The component to show if no error was thrown but data is null */
   nullComponent?: ReactNode;
-  /** The component to show if no error was thrown but data is undefined or null */
   nullableComponent?: never;
 }
 
 export interface LoaderErrorPropsWithNullable extends LoaderErrorBaseProps {
   undefinedComponent?: never;
   nullComponent?: never;
+  /** The component to show if no error was thrown but data is undefined or null */
   nullableComponent?: ReactNode;
 }
 
