@@ -2,7 +2,7 @@ import type { OptionalOnCondition } from "@alextheman/utility";
 import type { ReactNode } from "react";
 import type { ContextHookOptions } from "src/types";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 export interface ScreenSizeProps {
   children: ReactNode;
@@ -32,27 +32,13 @@ export function useScreenSize<Strict extends boolean = true>({
   return context;
 }
 
-function ScreenSizeProvider({ children, largeScreenWidth, largeScreenHeight }: ScreenSizeProps) {
+function ScreenSizeProvider({
+  children,
+  largeScreenWidth = 669,
+  largeScreenHeight = 660,
+}: ScreenSizeProps) {
   const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState<number>(window.innerHeight);
-
-  function largeScreenCondition(
-    width: number,
-    height: number,
-    largeScreenWidth: number = 669,
-    largeScreenHeight: number = 600,
-  ): boolean {
-    return width > largeScreenWidth && height > largeScreenHeight;
-  }
-
-  const [isLargeScreen, setIsLargeScreen] = useState<boolean>(
-    largeScreenCondition(
-      window.innerWidth,
-      window.innerHeight,
-      largeScreenWidth,
-      largeScreenHeight,
-    ),
-  );
 
   useEffect(() => {
     function setDimensions() {
@@ -66,10 +52,8 @@ function ScreenSizeProvider({ children, largeScreenWidth, largeScreenHeight }: S
     };
   }, []);
 
-  useEffect(() => {
-    setIsLargeScreen(
-      largeScreenCondition(windowWidth, windowHeight, largeScreenWidth, largeScreenHeight),
-    );
+  const isLargeScreen = useMemo(() => {
+    return windowWidth > largeScreenWidth && windowHeight > largeScreenHeight;
   }, [windowWidth, windowHeight, largeScreenWidth, largeScreenHeight]);
 
   return (
