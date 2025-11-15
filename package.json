@@ -36,6 +36,7 @@
     "storybook": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
     "update-dependencies": "bash -c 'npx npm-check-updates -u \"$@\" && npm install' --",
+    "update-peer-dependencies": "bash -c 'npx npm-check-updates --dep peer -u \"$@\" && npm install' --",
     "use-live-eslint-plugin": "npm uninstall @alextheman/eslint-plugin && npm install --save-dev @alextheman/eslint-plugin",
     "use-local-eslint-plugin": "npm --prefix ../eslint-plugin run create-local-package && npm uninstall @alextheman/eslint-plugin && npm install --save-dev ../eslint-plugin/alextheman-eslint-plugin-*.tgz"
   },
@@ -59,12 +60,12 @@
     "typescript-eslint": "^8.46.4"
   },
   "peerDependencies": {
-    "@emotion/react": "^11.14.0",
+    "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^7.3.5",
+    "@mui/icons-material": "^7.3.4",
     "@mui/material": "^7.3.5",
     "react": "^19.2.0",
-    "react-hook-form": "^7.66.0",
+    "react-hook-form": "^7.65.0",
     "react-router-dom": "^7.9.6"
   }
 }
