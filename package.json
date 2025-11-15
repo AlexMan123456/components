@@ -1,6 +1,6 @@
 {
   "name": "@alextheman/components",
-  "version": "5.5.2",
+  "version": "5.6.0",
   "description": "A package containing common React components used across my projects",
   "repository": {
     "type": "git",
@@ -40,34 +40,31 @@
     "use-local-eslint-plugin": "npm --prefix ../eslint-plugin run create-local-package && npm uninstall @alextheman/eslint-plugin && npm install --save-dev ../eslint-plugin/alextheman-eslint-plugin-*.tgz"
   },
   "dependencies": {
-    "@alextheman/utility": "^2.12.1",
+    "@alextheman/utility": "^2.15.1",
     "common-tags": "^1.8.2",
     "react-live": "^4.1.8"
   },
   "devDependencies": {
-    "@alextheman/eslint-plugin": "^2.5.0",
-    "@eslint/compat": "^1.4.1",
-    "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.39.1",
+    "@alextheman/eslint-plugin": "^3.0.0",
     "@types/common-tags": "^1.8.4",
-    "@types/node": "^24.10.0",
-    "@types/react": "^19.2.2",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.4",
     "eslint": "^9.39.1",
     "globals": "^16.5.0",
     "husky": "^9.1.7",
     "prettier": "^3.6.2",
     "styled-components": "^6.1.19",
-    "tsup": "^8.5.0",
+    "tsup": "^8.5.1",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.3"
+    "typescript-eslint": "^8.46.4"
   },
   "peerDependencies": {
     "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/icons-material": "^7.3.1",
-    "@mui/material": "^7.3.1",
-    "react": "^19.1.0",
-    "react-hook-form": "^7.65.0",
-    "react-router-dom": "^7.6.2"
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.5",
+    "@mui/material": "^7.3.5",
+    "react": "^19.2.0",
+    "react-hook-form": "^7.66.0",
+    "react-router-dom": "^7.9.6"
   }
 }
