@@ -36,6 +36,7 @@
     "storybook": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
     "update-dependencies": "bash -c 'npx npm-check-updates -u \"$@\" && npm install' --",
+    "update-peer-dependencies": "bash -c 'npx npm-check-updates --dep peer -u \"$@\" && npm install' --",
     "use-live-eslint-plugin": "npm uninstall @alextheman/eslint-plugin && npm install --save-dev @alextheman/eslint-plugin",
     "use-local-eslint-plugin": "npm --prefix ../eslint-plugin run create-local-package && npm uninstall @alextheman/eslint-plugin && npm install --save-dev ../eslint-plugin/alextheman-eslint-plugin-*.tgz"
   },
