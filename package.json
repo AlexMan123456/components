@@ -33,6 +33,7 @@
     "lint-prettier-javascript": "prettier --check \"./**/*.js\"",
     "lint-prettier-typescript": "prettier --check --parser typescript \"./**/*.{ts,tsx}\"",
     "lint-tsc": "tsc --noEmit",
+    "prepare": "husky",
     "storybook": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
     "update-dependencies": "bash -c 'npx npm-check-updates -u \"$@\" && npm install' --",
