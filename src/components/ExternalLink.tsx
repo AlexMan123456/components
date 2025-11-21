@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import MUILink from "@mui/material/Link";
 
 export interface ExternalLinkProps extends Omit<LinkProps, "to" | "target" | "rel"> {
-  href: `https://${string}` | `http://${string}`;
+  href: `https://${string}` | `http://${string}` | (string & {});
   to?: never;
   children: ReactNode;
 }

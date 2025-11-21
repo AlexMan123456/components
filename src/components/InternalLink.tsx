@@ -5,7 +5,7 @@ import MUILink from "@mui/material/Link";
 import { Link as ReactDOMLink } from "react-router-dom";
 
 export interface InternalLinkProps extends Omit<LinkProps, "href"> {
-  to: `/${string}` | `~/${string}`;
+  to: `/${string}` | `~/${string}` | (string & {});
   href?: never;
   children: ReactNode;
 }
