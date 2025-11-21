@@ -26,11 +26,12 @@ function Loader<T>({
     <LoaderProvider<T> loadingComponent={loadingComponent} {...loaderProviderProps}>
       {/* @ts-expect-error: We need to pass all four to LoaderError for the wrapper to work. It is ok as Loader will then do its own checks to enforce mutual exclusivity, and LoaderError knows how to deal with it anyway. */}
       <LoaderError
-        errorComponent={errorComponent}
         undefinedComponent={undefinedComponent}
         nullComponent={nullComponent}
         nullableComponent={nullableComponent}
-      />
+      >
+        {errorComponent}
+      </LoaderError>
       <LoaderData<T>>{children}</LoaderData>
     </LoaderProvider>
   );
