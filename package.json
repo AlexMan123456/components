@@ -17,7 +17,6 @@
   ],
   "scripts": {
     "build": "tsup",
-    "build-storybook": "storybook build",
     "change-major": "npm version major -m \"Change version number to v%s\"",
     "change-minor": "npm version minor -m \"Change version number to v%s\"",
     "change-patch": "npm version patch -m \"Change version number to v%s\"",
@@ -34,7 +33,6 @@
     "lint-prettier-typescript": "prettier --check --parser typescript \"./**/*.{ts,tsx}\"",
     "lint-tsc": "tsc --noEmit",
     "prepare": "husky",
-    "storybook": "storybook dev -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
     "update-dependencies": "bash -c 'npx npm-check-updates -u \"$@\" && npm install' --",
     "update-peer-dependencies": "bash -c 'npx npm-check-updates --dep peer -u \"$@\" && npm install' --",
