@@ -7,8 +7,13 @@ import { useRef } from "react";
 import { useLoader } from "src/providers/LoaderProvider";
 
 export interface LoaderErrorBaseProps {
-  /** The component to show if an error has been thrown. */
+  /**
+   * The component to show if an error has been thrown.
+   * @deprecated Please pass in the content to show on error as children instead.
+   */
   errorComponent?: ReactNode | ((error: unknown) => ReactNode);
+  /** The component to show if an error has been thrown. */
+  children?: ReactNode | ((error: unknown) => ReactNode);
   /** Whether you want to log the error to the console or not. */
   logError?: boolean;
 }
@@ -33,6 +38,7 @@ export type LoaderErrorProps = LoaderErrorPropsWithUndefinedOrNull | LoaderError
 /** The component responsible for showing any errors provided by LoaderProvider. */
 function LoaderError({
   errorComponent: propsErrorComponent,
+  children,
   undefinedComponent,
   nullComponent,
   nullableComponent,
@@ -48,7 +54,7 @@ function LoaderError({
   const logError = propsLogError ?? contextLogError;
   const warnedOnce = useRef(false);
 
-  const errorComponent = propsErrorComponent ?? contextErrorComponent;
+  const errorComponent = children ?? propsErrorComponent ?? contextErrorComponent;
 
   if (error) {
     if (logError && !warnedOnce.current) {
