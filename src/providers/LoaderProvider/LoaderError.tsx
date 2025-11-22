@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/refs */
 import type { ReactNode } from "react";
 
 import Alert from "@mui/material/Alert";
