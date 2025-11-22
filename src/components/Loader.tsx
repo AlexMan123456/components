@@ -7,7 +7,7 @@ import { LoaderError, LoaderProvider } from "src/providers";
 import LoaderData from "src/providers/LoaderProvider/LoaderData";
 
 export type LoaderProps<T> = Omit<LoaderProviderProps<T>, "children"> &
-  Omit<LoaderErrorProps, "errorComponent"> &
+  Omit<LoaderErrorProps, "errorComponent" | "children"> &
   Omit<LoaderDataProps<T>, "showOnError" | "onUndefined" | "onNull" | "onNullable">;
 
 /** An in-line component that deals with state management when fetching data from an API.
