@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsdown",
     "change-major": "npm version major -m \"Change version number to v%s\"",
     "change-minor": "npm version minor -m \"Change version number to v%s\"",
     "change-patch": "npm version patch -m \"Change version number to v%s\"",
@@ -54,7 +54,7 @@
     "husky": "^9.1.7",
     "prettier": "^3.6.2",
     "styled-components": "^6.1.19",
-    "tsup": "^8.5.1",
+    "tsdown": "^0.16.6",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.47.0"
   },
