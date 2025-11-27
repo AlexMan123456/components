@@ -3,7 +3,8 @@ import type { LoaderErrorProps } from "src/providers/LoaderProvider/LoaderError"
 
 import CircularProgress from "@mui/material/CircularProgress";
 
-import { LoaderError, LoaderProvider } from "src/providers";
+import { LoaderError } from "src/providers";
+import LoaderProvider from "src/providers/LoaderProvider";
 import LoaderData from "src/providers/LoaderProvider/LoaderData";
 
 export type LoaderProps<T> = Omit<LoaderProviderProps<T>, "children"> &

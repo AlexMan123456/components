@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { useLoader } from "src/providers/LoaderProvider";
+import { useLoader } from "src/providers/LoaderProvider/LoaderProvider";
 
 export interface LoaderDataProps<T> {
   /** The elements to show after data has been loaded.

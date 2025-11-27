@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import Alert from "@mui/material/Alert";
 import { useRef } from "react";
 
-import { useLoader } from "src/providers/LoaderProvider";
+import { useLoader } from "src/providers/LoaderProvider/LoaderProvider";
 
 export interface LoaderErrorBaseProps {
   /**
