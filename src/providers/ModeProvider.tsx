@@ -7,9 +7,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { createContext, useContext, useMemo, useState } from "react";
 
-/** @deprecated Please use `PaletteMode` from `@mui/material/styles` instead. */
-export type Mode = "light" | "dark";
-
 export interface ModeContextValue {
   toggleMode: () => void;
   mode: PaletteMode;

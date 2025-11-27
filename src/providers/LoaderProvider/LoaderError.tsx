@@ -36,7 +36,6 @@ export type LoaderErrorProps = LoaderErrorPropsWithUndefinedOrNull | LoaderError
 
 /** The component responsible for showing any errors provided by LoaderProvider. */
 function LoaderError({
-  errorComponent: propsErrorComponent,
   children,
   undefinedComponent,
   nullComponent,
@@ -53,7 +52,7 @@ function LoaderError({
   const logError = propsLogError ?? contextLogError;
   const warnedOnce = useRef(false);
 
-  const errorComponent = children ?? propsErrorComponent ?? contextErrorComponent;
+  const errorComponent = children ?? contextErrorComponent;
 
   if (error) {
     if (logError && !warnedOnce.current) {

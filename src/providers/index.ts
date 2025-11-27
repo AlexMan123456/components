@@ -12,18 +12,13 @@ export type {
   LoaderProviderPropsWithError,
   LoaderProviderPropsWithNoError,
 } from "src/providers/LoaderProvider";
-export type {
-  LoaderDataBaseProps,
-  LoaderDataPropsOnNullable,
-  LoaderDataPropsOnUndefinedOrNull,
-  LoaderDataProps,
-} from "src/providers/LoaderProvider/LoaderData";
+export type { LoaderDataProps } from "src/providers/LoaderProvider/LoaderData";
 export type {
   LoaderErrorBaseProps,
   LoaderErrorPropsWithNullable,
   LoaderErrorPropsWithUndefinedOrNull,
   LoaderErrorProps,
 } from "src/providers/LoaderProvider/LoaderError";
-export type { Mode, ModeProviderProps } from "src/providers/ModeProvider";
+export type { ModeProviderProps } from "src/providers/ModeProvider";
 export type { ScreenSizeProps, ScreenSizeContextValue } from "src/providers/ScreenSizeProvider";
 export type { SnackbarProviderProps } from "src/providers/SnackbarProvider";
