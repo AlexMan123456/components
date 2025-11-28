@@ -46,6 +46,10 @@
   },
   "devDependencies": {
     "@alextheman/eslint-plugin": "^4.2.2",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.5",
+    "@mui/material": "^7.3.5",
     "@types/common-tags": "^1.8.4",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
@@ -53,18 +57,21 @@
     "globals": "^16.5.0",
     "husky": "^9.1.7",
     "prettier": "^3.7.1",
+    "react": "^19.2.0",
+    "react-hook-form": "^7.66.1",
+    "react-router-dom": "^7.9.6",
     "styled-components": "^6.1.19",
     "tsdown": "^0.16.8",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.48.0"
   },
   "peerDependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^7.3.5",
-    "@mui/material": "^7.3.5",
-    "react": "^19.2.0",
-    "react-hook-form": "^7.66.0",
-    "react-router-dom": "^7.9.6"
+    "@emotion/react": ">=11.0.0",
+    "@emotion/styled": ">=11.0.0",
+    "@mui/icons-material": ">=7.0.0",
+    "@mui/material": ">=7.0.0",
+    "react": ">=19.0.0",
+    "react-hook-form": ">=7.66.0",
+    "react-router-dom": ">=7.0.0"
   }
 }
