@@ -34,7 +34,7 @@
     "lint-tsc": "tsc --noEmit",
     "prepare": "husky",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "update-dependencies": "bash -c 'pnpx npm-check-updates -p pnpm -u \"$@\" && pnpm install' --",
+    "update-dependencies": "bash -c 'pnpx npm-check-updates -p pnpm -u \"$@\" && pnpm install --no-frozen-lockfile' --",
     "use-live-eslint-plugin": "pnpm uninstall @alextheman/eslint-plugin && pnpm install --save-dev @alextheman/eslint-plugin",
     "use-local-eslint-plugin": "npm --prefix ../eslint-plugin run create-local-package && pnpm uninstall @alextheman/eslint-plugin && pnpm install --save-dev ../eslint-plugin/alextheman-eslint-plugin-*.tgz"
   },
