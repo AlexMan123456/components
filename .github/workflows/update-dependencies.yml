@@ -40,7 +40,7 @@ jobs:
       run: pnpm install
 
     - name: Update JavaScript dependencies
-      run: pnpm run update-dependencies || true
+      run: pnpm update
 
     - name: Update GitHub Actions
       run: pnpx actions-up -y
