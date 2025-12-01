@@ -6,9 +6,9 @@ if git diff --cached --quiet; then
   exit 0
 fi
 
-npx alex-c-line check-lockfile-version-discrepancy
+# npx alex-c-line check-lockfile-version-discrepancy
 
-npm run format
-npm run lint
+pnpm run format
+pnpm run lint
 
 git update-index --again
