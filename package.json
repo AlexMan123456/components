@@ -39,12 +39,12 @@
     "use-local-eslint-plugin": "npm --prefix ../eslint-plugin run create-local-package && pnpm uninstall @alextheman/eslint-plugin && pnpm install --save-dev ../eslint-plugin/alextheman-eslint-plugin-*.tgz"
   },
   "dependencies": {
-    "@alextheman/utility": "^3.3.2",
+    "@alextheman/utility": "^3.4.0",
     "common-tags": "^1.8.2",
     "react-live": "^4.1.8"
   },
   "devDependencies": {
-    "@alextheman/eslint-plugin": "^4.2.3",
+    "@alextheman/eslint-plugin": "^4.2.5",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.5",
@@ -55,7 +55,7 @@
     "eslint": "^9.39.1",
     "globals": "^16.5.0",
     "husky": "^9.1.7",
-    "prettier": "^3.7.2",
+    "prettier": "^3.7.3",
     "react": "^19.2.0",
     "react-hook-form": "^7.67.0",
     "react-router-dom": "^7.9.6",
