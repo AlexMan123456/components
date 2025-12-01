@@ -10,7 +10,25 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
-      - uses: AlexMan123456/github-actions/.github/actions/npm-ci@7cfde49e1e35cf29510a080dadccf249c0dd157b # v2.2.0
+      - name: Checkout the repository
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6.0.0
+
+      - name: Use Node.js
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
-          run-tests: false
+          node-version: 22
+      
+      - name: Use latest PNPM version
+        run: corepack enable && corepack prepare pnpm@latest --activate
+        
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build package
+        run: pnpm run build --if-present
+
+      - name: Fetch from main
+        run: git fetch --unshallow origin main
+
+      - name: Run linting checks
+        run: pnpm run lint
