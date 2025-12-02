@@ -34,13 +34,15 @@ jobs:
         git config --global user.email "alexupbot@bot.com"
 
     - name: Use latest PNPM version
-      run: corepack enable && corepack prepare pnpm@latest --activate
+      run: |
+        corepack enable
+        corepack prepare pnpm@latest --activate
 
     - name: Install dependencies
       run: pnpm install
 
     - name: Update JavaScript dependencies
-      run: pnpm update
+      run: pnpm run update-dependencies
 
     - name: Update GitHub Actions
       run: pnpx actions-up -y

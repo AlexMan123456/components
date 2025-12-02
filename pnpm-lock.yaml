@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@alextheman/utility':
-        specifier: ^3.4.0
-        version: 3.4.0
+        specifier: ^3.4.1
+        version: 3.4.1
       common-tags:
         specifier: ^1.8.2
         version: 1.8.2
@@ -19,8 +19,8 @@ importers:
         version: 4.1.8(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
     devDependencies:
       '@alextheman/eslint-plugin':
-        specifier: ^4.2.5
-        version: 4.2.5(eslint-config-prettier@10.1.8(eslint@9.39.1))(eslint-import-resolver-typescript@4.4.4)(eslint-plugin-import@2.32.0)(eslint-plugin-jsx-a11y@6.10.2(eslint@9.39.1))(eslint-plugin-package-json@0.85.0(@types/estree@1.0.8)(eslint@9.39.1)(jsonc-eslint-parser@2.4.1))(eslint-plugin-perfectionist@4.15.1(eslint@9.39.1)(typescript@5.9.3))(eslint-plugin-prettier@5.5.4(eslint-config-prettier@10.1.8(eslint@9.39.1))(eslint@9.39.1)(prettier@3.7.3))(eslint-plugin-react-hooks@7.0.1(eslint@9.39.1))(eslint-plugin-react-refresh@0.4.24(eslint@9.39.1))(eslint-plugin-react@7.37.5(eslint@9.39.1))(eslint@9.39.1)(typescript-eslint@8.48.0(eslint@9.39.1)(typescript@5.9.3))(typescript@5.9.3)(vite-tsconfig-paths@5.1.4(typescript@5.9.3)(vite@7.2.6(@types/node@24.10.1)))(vitest@4.0.14(@types/node@24.10.1))
+        specifier: ^4.3.0
+        version: 4.3.0(@eslint/js@9.39.1)(eslint-config-prettier@10.1.8(eslint@9.39.1))(eslint-import-resolver-typescript@4.4.4)(eslint-plugin-import@2.32.0)(eslint-plugin-jsx-a11y@6.10.2(eslint@9.39.1))(eslint-plugin-package-json@0.85.0(@types/estree@1.0.8)(eslint@9.39.1)(jsonc-eslint-parser@2.4.1))(eslint-plugin-perfectionist@4.15.1(eslint@9.39.1)(typescript@5.9.3))(eslint-plugin-prettier@5.5.4(eslint-config-prettier@10.1.8(eslint@9.39.1))(eslint@9.39.1)(prettier@3.7.3))(eslint-plugin-react-hooks@7.0.1(eslint@9.39.1))(eslint-plugin-react-refresh@0.4.24(eslint@9.39.1))(eslint-plugin-react@7.37.5(eslint@9.39.1))(eslint@9.39.1)(typescript-eslint@8.48.0(eslint@9.39.1)(typescript@5.9.3))(typescript@5.9.3)(vite-tsconfig-paths@5.1.4(typescript@5.9.3)(vite@7.2.6(@types/node@24.10.1)))(vitest@4.0.14(@types/node@24.10.1))
       '@emotion/react':
         specifier: ^11.14.0
         version: 11.14.0(@types/react@19.2.7)(react@19.2.0)
@@ -78,9 +78,10 @@ importers:
 
 packages:
 
-  '@alextheman/eslint-plugin@4.2.5':
-    resolution: {integrity: sha512-axc8oa84oMA2EBfGRJKBI1IU6fbveXxmjjnqYZ9skHGBaU2ROnZW8Arozsu0ccH5E+W5KW68jC/JcXTyNDL6yA==}
+  '@alextheman/eslint-plugin@4.3.0':
+    resolution: {integrity: sha512-HkEAYLwNoVbXHHBibXEy+dMKOV2E5OE2Q8B/0kcQCkMFb+O53xxhnmHRx2zJDeKc3J3htTkHiZ33RgYEO52CRA==}
     peerDependencies:
+      '@eslint/js': '>=9.0.0'
       eslint: '>=9.0.0'
       eslint-config-prettier: '>=10.0.0'
       eslint-import-resolver-typescript: '>=4.0.0'
@@ -96,8 +97,8 @@ packages:
       vite-tsconfig-paths: '>=5.1.4'
       vitest: '>=4.0.13'
 
-  '@alextheman/utility@3.4.0':
-    resolution: {integrity: sha512-OWG52HqJmu81d0yHg2L5WOOczngiixK9jLhf7EFJro0ttEfW4fGrHJJvg+0C+9Epjjq7ZncihmS9NEiThw57Aw==}
+  '@alextheman/utility@3.4.1':
+    resolution: {integrity: sha512-InoqlaPINya97WESFPBH1ShZVRsJdzr9HL2Rm/SCLYBtDUGEqZKQegd4BlFdQT/0CXxEOHmK2Wz2EzHyUFhrUQ==}
 
   '@altano/repository-tools@2.0.1':
     resolution: {integrity: sha512-YE/52CkFtb+YtHPgbWPai7oo5N9AKnMuP5LM+i2AG7G1H2jdYBCO1iDnkDE3dZ3C1MIgckaF+d5PNRulgt0bdw==}
@@ -2694,9 +2695,10 @@ packages:
 
 snapshots:
 
-  '@alextheman/eslint-plugin@4.2.5(eslint-config-prettier@10.1.8(eslint@9.39.1))(eslint-import-resolver-typescript@4.4.4)(eslint-plugin-import@2.32.0)(eslint-plugin-jsx-a11y@6.10.2(eslint@9.39.1))(eslint-plugin-package-json@0.85.0(@types/estree@1.0.8)(eslint@9.39.1)(jsonc-eslint-parser@2.4.1))(eslint-plugin-perfectionist@4.15.1(eslint@9.39.1)(typescript@5.9.3))(eslint-plugin-prettier@5.5.4(eslint-config-prettier@10.1.8(eslint@9.39.1))(eslint@9.39.1)(prettier@3.7.3))(eslint-plugin-react-hooks@7.0.1(eslint@9.39.1))(eslint-plugin-react-refresh@0.4.24(eslint@9.39.1))(eslint-plugin-react@7.37.5(eslint@9.39.1))(eslint@9.39.1)(typescript-eslint@8.48.0(eslint@9.39.1)(typescript@5.9.3))(typescript@5.9.3)(vite-tsconfig-paths@5.1.4(typescript@5.9.3)(vite@7.2.6(@types/node@24.10.1)))(vitest@4.0.14(@types/node@24.10.1))':
+  '@alextheman/eslint-plugin@4.3.0(@eslint/js@9.39.1)(eslint-config-prettier@10.1.8(eslint@9.39.1))(eslint-import-resolver-typescript@4.4.4)(eslint-plugin-import@2.32.0)(eslint-plugin-jsx-a11y@6.10.2(eslint@9.39.1))(eslint-plugin-package-json@0.85.0(@types/estree@1.0.8)(eslint@9.39.1)(jsonc-eslint-parser@2.4.1))(eslint-plugin-perfectionist@4.15.1(eslint@9.39.1)(typescript@5.9.3))(eslint-plugin-prettier@5.5.4(eslint-config-prettier@10.1.8(eslint@9.39.1))(eslint@9.39.1)(prettier@3.7.3))(eslint-plugin-react-hooks@7.0.1(eslint@9.39.1))(eslint-plugin-react-refresh@0.4.24(eslint@9.39.1))(eslint-plugin-react@7.37.5(eslint@9.39.1))(eslint@9.39.1)(typescript-eslint@8.48.0(eslint@9.39.1)(typescript@5.9.3))(typescript@5.9.3)(vite-tsconfig-paths@5.1.4(typescript@5.9.3)(vite@7.2.6(@types/node@24.10.1)))(vitest@4.0.14(@types/node@24.10.1))':
     dependencies:
-      '@alextheman/utility': 3.4.0
+      '@alextheman/utility': 3.4.1
+      '@eslint/js': 9.39.1
       '@typescript-eslint/utils': 8.48.0(eslint@9.39.1)(typescript@5.9.3)
       common-tags: 1.8.2
       eslint: 9.39.1
@@ -2718,7 +2720,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@alextheman/utility@3.4.0':
+  '@alextheman/utility@3.4.1':
     dependencies:
       zod: 4.1.13
 

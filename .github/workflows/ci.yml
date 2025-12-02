@@ -19,7 +19,9 @@ jobs:
           node-version: 22
       
       - name: Use latest PNPM version
-        run: corepack enable && corepack prepare pnpm@latest --activate
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
         
       - name: Install dependencies
         run: pnpm install --frozen-lockfile

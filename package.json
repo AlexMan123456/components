@@ -34,16 +34,17 @@
     "lint-tsc": "tsc --noEmit",
     "prepare": "husky",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "update-dependencies": "bash -c 'pnpm update --latest $@ !tsdown' --",
     "use-live-eslint-plugin": "pnpm uninstall @alextheman/eslint-plugin && pnpm install --save-dev @alextheman/eslint-plugin",
     "use-local-eslint-plugin": "npm --prefix ../eslint-plugin run create-local-package && pnpm uninstall @alextheman/eslint-plugin && pnpm install --save-dev ../eslint-plugin/alextheman-eslint-plugin-*.tgz"
   },
   "dependencies": {
-    "@alextheman/utility": "^3.4.0",
+    "@alextheman/utility": "^3.4.1",
     "common-tags": "^1.8.2",
     "react-live": "^4.1.8"
   },
   "devDependencies": {
-    "@alextheman/eslint-plugin": "^4.2.5",
+    "@alextheman/eslint-plugin": "^4.3.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.5",
