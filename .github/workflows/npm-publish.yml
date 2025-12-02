@@ -22,7 +22,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
       
       - name: Use latest PNPM version
-        run: corepack enable && corepack prepare pnpm@latest --activate
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
       
       - name: Use latest NPM version
         run: npm install -g npm@latest
