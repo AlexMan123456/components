@@ -38,9 +38,6 @@ jobs:
       with:
         run_install: false
 
-    - name: Install dependencies
-      run: pnpm install
-
     - name: Update JavaScript dependencies
       run: |
         pnpm run update-dependencies
