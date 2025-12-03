@@ -42,7 +42,9 @@ jobs:
       run: pnpm install
 
     - name: Update JavaScript dependencies
-      run: pnpm run update-dependencies
+      run: |
+        pnpm run update-dependencies
+        pnpm install --no-frozen-lockfile
 
     - name: Update GitHub Actions
       run: pnpx actions-up -y
