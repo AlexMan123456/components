@@ -60,7 +60,7 @@
     "react-hook-form": "^7.68.0",
     "react-router-dom": "^7.10.1",
     "styled-components": "^6.1.19",
-    "tsdown": "^0.16.8",
+    "tsdown": "^0.17.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.48.1"
   },
@@ -73,10 +73,5 @@
     "react-hook-form": ">=7.66.0",
     "react-router-dom": ">=7.0.0"
   },
-  "packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a",
-  "pnpm": {
-    "overrides": {
-      "tsdown": "<0.17"
-    }
-  }
+  "packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a"
 }
