@@ -21,6 +21,7 @@ export interface DropdownMenuProps {
   onClose?: () => void;
 }
 
+/** @deprecated This component does not support the new context-based pattern and individual DropdownMenuItem components. Please use DropdownMenu2 instead. */
 function DropdownMenu({
   children,
   button: Button = MUIButton,
