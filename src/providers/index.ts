@@ -1,3 +1,5 @@
+export * from "src/providers/DropdownMenu2";
+export { default as DropdownMenu2 } from "src/providers/DropdownMenu2";
 export { default as LoaderProvider } from "src/providers/LoaderProvider";
 export * from "src/providers/LoaderProvider";
 export { default as ModeProvider, useMode } from "src/providers/ModeProvider";
