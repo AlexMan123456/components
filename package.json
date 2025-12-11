@@ -33,10 +33,16 @@
     "lint-prettier-typescript": "prettier --check --parser typescript \"./**/*.{ts,tsx}\"",
     "lint-tsc": "tsc --noEmit",
     "prepare": "husky",
+    "prepare-live-eslint-plugin": "pnpm uninstall @alextheman/eslint-plugin && pnpm install --save-dev @alextheman/eslint-plugin",
+    "prepare-live-utility": "pnpm uninstall @alextheman/utility && pnpm install @alextheman/utility",
+    "prepare-local-eslint-plugin": "dotenv -e .env -- sh -c 'ESLINT_PLUGIN_PATH=${LOCAL_ESLINT_PLUGIN_PATH:-../eslint-plugin}; pnpm --prefix \"$ESLINT_PLUGIN_PATH\" run build && pnpm uninstall @alextheman/eslint-plugin && pnpm install --save-dev file:\"$ESLINT_PLUGIN_PATH\"'",
+    "prepare-local-utility": "dotenv -e .env -- sh -c 'UTILITY_PATH=${LOCAL_UTILITY_PATH:-../utility}; pnpm --prefix \"$UTILITY_PATH\" run build && pnpm uninstall @alextheman/utility && pnpm install file:\"$UTILITY_PATH\"'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "update-dependencies": "pnpm update --latest && pnpm update",
-    "use-live-eslint-plugin": "pnpm uninstall @alextheman/eslint-plugin && pnpm install --save-dev @alextheman/eslint-plugin",
-    "use-local-eslint-plugin": "npm --prefix ../eslint-plugin run create-local-package && pnpm uninstall @alextheman/eslint-plugin && pnpm install --save-dev ../eslint-plugin/alextheman-eslint-plugin-*.tgz"
+    "use-live-eslint-plugin": "pnpm run prepare-live-eslint-plugin && pnpm run lint",
+    "use-live-utility": "pnpm run prepare-live-utility",
+    "use-local-eslint-plugin": "pnpm run prepare-local-eslint-plugin && pnpm run lint",
+    "use-local-utility": "pnpm run prepare-local-utility"
   },
   "dependencies": {
     "@alextheman/utility": "^3.4.1",
@@ -52,6 +58,7 @@
     "@types/common-tags": "^1.8.4",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
+    "dotenv-cli": "^11.0.0",
     "eslint": "^9.39.1",
     "globals": "^16.5.0",
     "husky": "^9.1.7",
@@ -75,6 +82,9 @@
   },
   "packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a",
   "pnpm": {
-    "onlyBuiltDependencies": ["esbuild", "unrs-resolver"]
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "unrs-resolver"
+    ]
   }
 }
