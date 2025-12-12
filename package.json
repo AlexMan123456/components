@@ -45,31 +45,31 @@
     "use-local-utility": "pnpm run prepare-local-utility"
   },
   "dependencies": {
-    "@alextheman/utility": "^3.4.1",
+    "@alextheman/utility": "^3.5.5",
     "common-tags": "^1.8.2",
     "react-live": "^4.1.8"
   },
   "devDependencies": {
-    "@alextheman/eslint-plugin": "^4.3.0",
+    "@alextheman/eslint-plugin": "^4.5.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.6",
     "@mui/material": "^7.3.6",
     "@types/common-tags": "^1.8.4",
-    "@types/node": "^24.10.1",
+    "@types/node": "^25.0.1",
     "@types/react": "^19.2.7",
     "dotenv-cli": "^11.0.0",
     "eslint": "^9.39.1",
     "globals": "^16.5.0",
     "husky": "^9.1.7",
     "prettier": "^3.7.4",
-    "react": "^19.2.1",
+    "react": "^19.2.3",
     "react-hook-form": "^7.68.0",
     "react-router-dom": "^7.10.1",
     "styled-components": "^6.1.19",
-    "tsdown": "^0.17.0",
+    "tsdown": "^0.17.3",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.48.1"
+    "typescript-eslint": "^8.49.0"
   },
   "peerDependencies": {
     "@emotion/react": ">=11.0.0",
