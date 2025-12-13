@@ -11,4 +11,4 @@ on:
 jobs:
   publish:
     if: ${{ github.repository == 'AlexMan123456/components' }}
-    uses: AlexMan123456/github-actions/.github/workflows/npm-registry-publish.yml@2f3f3cc452f2d80ef075085355400d83dfe0d42f # v2.8.3
+    uses: AlexMan123456/github-actions/.github/workflows/npm-registry-publish.yml@9d6f9972beb8b7f9cf05ac673e4a198a482a109c # v2.8.4
