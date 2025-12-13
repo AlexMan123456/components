@@ -45,7 +45,7 @@
     "use-local-utility": "pnpm run prepare-local-utility"
   },
   "dependencies": {
-    "@alextheman/utility": "^3.5.5",
+    "@alextheman/utility": "^3.5.6",
     "common-tags": "^1.8.2",
     "react-live": "^4.1.8"
   },
@@ -59,7 +59,7 @@
     "@types/node": "^25.0.1",
     "@types/react": "^19.2.7",
     "dotenv-cli": "^11.0.0",
-    "eslint": "^9.39.1",
+    "eslint": "^9.39.2",
     "globals": "^16.5.0",
     "husky": "^9.1.7",
     "prettier": "^3.7.4",
