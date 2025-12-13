@@ -3,7 +3,8 @@ import type { ReactNode } from "react";
 import { useLoader } from "src/providers/LoaderProvider/LoaderProvider";
 
 export interface LoaderDataProps<T> {
-  /** The elements to show after data has been loaded.
+  /**
+   * The elements to show after data has been loaded.
    * This is best provided as a function with a data argument that guarantees the data will not be undefined by the time you receive it here.
    */
   children: ReactNode | ((data: NonNullable<T>) => ReactNode);
@@ -13,19 +14,27 @@ export interface LoaderDataProps<T> {
   loadingComponent?: ReactNode;
 }
 
-/** The component responsible for showing the data provided by LoaderProvider. */
-function LoaderData<T>({
+/**
+ * The component responsible for showing the data provided by LoaderProvider.
+ * @template DataType - The type of data being loaded.
+ * @param root0 - Props to pass to LoaderData.
+ * @param root0.children - The elements to show after data has been loaded.
+ * This is best provided as a function with a data argument that guarantees the data will not be undefined by the time you receive it here.
+ * @param root0.dataParser - A parser for the data.
+ * @param root0.loadingComponent - The component to show when the data is being fetched.
+ */
+function LoaderData<DataType>({
   children,
   dataParser: loaderDataParser,
   loadingComponent,
-}: LoaderDataProps<T>) {
+}: LoaderDataProps<DataType>) {
   const {
     isLoading,
     data,
     dataParser: contextDataParser,
     loadingComponent: contextLoadingComponent,
     error,
-  } = useLoader<T>();
+  } = useLoader<DataType>();
   const dataParser = loaderDataParser ?? contextDataParser;
 
   if (isLoading) {

@@ -1,3 +1,6 @@
-import plugin from "@alextheman/eslint-plugin";
+import alexPlugin from "@alextheman/eslint-plugin";
 
-export default plugin.configs["combined/typescript-react"];
+export default [
+  ...alexPlugin.configs["combined/typescript-react"],
+  ...alexPlugin.configs["personal/components"],
+];
