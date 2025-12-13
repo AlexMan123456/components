@@ -6,14 +6,9 @@ import { useRef } from "react";
 import { useLoader } from "src/providers/LoaderProvider/LoaderProvider";
 
 export interface LoaderErrorBaseProps {
-  /**
-   * The component to show if an error has been thrown.
-   * @deprecated Please pass in the content to show on error as children instead.
-   */
-  errorComponent?: ReactNode | ((error: unknown) => ReactNode);
   /** The component to show if an error has been thrown. */
   children?: ReactNode | ((error: unknown) => ReactNode);
-  /** Whether you want to log the error to the console or not. */
+  /** An option to log the error to the console. */
   logError?: boolean;
 }
 
@@ -34,7 +29,15 @@ export interface LoaderErrorPropsWithNullable extends LoaderErrorBaseProps {
 
 export type LoaderErrorProps = LoaderErrorPropsWithUndefinedOrNull | LoaderErrorPropsWithNullable;
 
-/** The component responsible for showing any errors provided by LoaderProvider. */
+/**
+ * The component responsible for showing any errors provided by LoaderProvider.
+ * @param root0 - The props to be passed to LoaderError.
+ * @param root0.children - The component to show if an error has been thrown.
+ * @param root0.undefinedComponent - The component to show if no error was thrown but the data is undefined.
+ * @param root0.nullComponent - The component to show if no error was thrown but the data is null.
+ * @param root0.nullableComponent - The component to show if no error was thrown but the data is nullable (undefined or null).
+ * @param root0.logError - An option to log the error to the console.
+ */
 function LoaderError({
   children,
   undefinedComponent,
