@@ -50,7 +50,7 @@
     "react-live": "^4.1.8"
   },
   "devDependencies": {
-    "@alextheman/eslint-plugin": "^4.8.0",
+    "@alextheman/eslint-plugin": "^4.8.3",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.6",
