@@ -53,7 +53,9 @@ export function useLoader<DataType, Strict extends boolean = true>({
 /**
  * A provider for a context that deals with state management when fetching data from an API.
  * This may be used over Loader if you require more control over the placement of the error message and data display.
+ *
  * @template DataType - The type of data being loaded.
+ *
  * @param root0 - Props to pass to LoaderProvider.
  * @param root0.children - The components that may receive access to the LoaderContext value.
  * @param root0.loadingComponent - The component to show when the data is being fetched.

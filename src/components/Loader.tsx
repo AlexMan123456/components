@@ -14,7 +14,9 @@ export type LoaderProps<DataType> = Omit<LoaderProviderProps<DataType>, "childre
 /**
  * An in-line component that deals with state management when fetching data from an API.
  * This may be used over LoaderProvider if you don't require as much control over the placement of the error message and data display.
+ *
  * @template DataType - The type of data being loaded.
+ *
  * @param root0 - Props to pass to Loader.
  * @param root0.children - The elements to show after data has been loaded.
  * @param root0.errorComponent - The component to show if an error has been thrown. Note that this may not be provided unless the error prop has also been provided.
