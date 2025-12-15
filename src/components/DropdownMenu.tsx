@@ -23,15 +23,6 @@ export interface DropdownMenuProps {
 }
 
 /**
- * @param root0
- * @param root0.children
- * @param root0.button
- * @param root0.buttonChildren
- * @param root0.buttonProps
- * @param root0.isOpenIcon
- * @param root0.isClosedIcon
- * @param root0.onOpen
- * @param root0.onClose
  * @deprecated This component does not support the new context-based pattern and individual DropdownMenuItem components. Please use DropdownMenu2 instead.
  */
 function DropdownMenu({

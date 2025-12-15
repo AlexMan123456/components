@@ -10,19 +10,40 @@ import Collapse from "@mui/material/Collapse";
 import { useEffect, useState } from "react";
 
 export interface CollapsableItemProps {
+  /** Whether the item should initially be open or not. */
   isInitiallyOpen?: boolean;
+  /** A callback function to execute when the item is open. */
   onOpen?: () => void;
+  /** A callback function to execute when the item is closed. */
   onClose?: () => void;
+  /** The components to render when the item is open. */
   children: ReactNode;
+  /** Styling for the button. */
   buttonStyles?: SxProps;
+  /** The children to pass to the button. */
   buttonContents: ReactNode;
+  /** The specific button component to use. */
   buttonComponent?: ElementType;
+  /** The icon to show next to the button when open. */
   openIcon?: ReactNode;
+  /** The icon to show next to the button when closed. */
   closedIcon?: ReactNode;
+  /** Props to pass to collapse. */
   collapseProps?: Omit<CollapseProps, "in">;
+  /**
+   * Whether or not to use the default button styling.
+   *
+   * Defaults to `true` if `buttonComponent` is `ButtonBase`,
+   * otherwise defaults to `false`.
+   */
   useDefaultStyling?: boolean;
 }
 
+/**
+ * Shows a display area that can be opened to show the children components, or hidden away.
+ *
+ * @param props - Props to pass to CollapsableItem
+ */
 function CollapsableItem({
   isInitiallyOpen,
   onOpen,
