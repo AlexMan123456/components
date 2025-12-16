@@ -1,0 +1,11 @@
+## General Workflow Summary
+
+1. Create the skeleton of the feature, including JSDoc comments.
+2. Implement the feature.
+3. Commit the feature by itself.
+4. If intending to release, create a release note, carefully deciding if it's a major, minor, or patch release (if adding to a release that is about to happen, add to the existing note)
+5. Commit the release note separately from the feature.
+6. Create a feature pull request and wait for it to be merged, choosing the appropriate template.
+7. Run the commit-version-change workflow to create a pull request to change just the version.
+8. Merge it in once CI passes.
+9. All done!
