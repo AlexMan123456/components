@@ -1,6 +1,7 @@
 import type { OptionalOnCondition } from "@alextheman/utility";
 import type { ButtonOwnProps } from "@mui/material/Button";
 import type { ElementType, MouseEvent as ReactMouseEvent, ReactNode } from "react";
+
 import type { ContextHookOptions } from "src/types";
 
 import ArrowDropDown from "@mui/icons-material/ArrowDropDown";

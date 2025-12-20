@@ -1,6 +1,7 @@
 import type { OptionalOnCondition } from "@alextheman/utility";
 import type { PaletteMode } from "@mui/material/styles";
 import type { ReactNode } from "react";
+
 import type { ContextHookOptions } from "src/types";
 
 import CssBaseline from "@mui/material/CssBaseline";
