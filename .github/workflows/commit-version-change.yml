@@ -23,6 +23,6 @@ permissions:
 jobs:
   commit-version-change:
     if: ${{ github.repository == 'AlexMan123456/components' }}
-    uses: AlexMan123456/github-actions/.github/workflows/commit-version-change.yml@f81c1003e5772bf69a37fdb4ea0f8c084ce3bc20 # v2.11.2
+    uses: AlexMan123456/github-actions/.github/workflows/commit-version-change.yml@86529c00c5698703b0d66898a7bd4fc46c7f71ff # v3.0.0
     secrets:
       PAT_GITHUB: ${{ secrets.PAT_GITHUB }}
