@@ -8,6 +8,6 @@ on:
 
 jobs:
   ci:
-    uses: AlexMan123456/github-actions/.github/workflows/pnpm-ci.yml@c016c13a6227b8a31b5ddd866063bb5362873e70 # v3.0.1
+    uses: AlexMan123456/github-actions/.github/workflows/pnpm-ci.yml@701bb82ccd8b7b289794c3b2f8c056ae0b31e359 # v3.0.2
     with:
       run-tests: false
