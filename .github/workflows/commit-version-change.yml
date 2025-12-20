@@ -1,20 +1,7 @@
 name: Commit a version change
 on:
-  workflow_dispatch:
-    inputs:
-      version-type:
-        description: The version type to change
-        required: true
-        type: choice
-        options:
-          - major
-          - minor
-          - patch
-        default: patch
-      message:
-        description: Release message
-        required: false
-
+  push:
+    branches: ["main"]
 
 permissions:
   contents: write
