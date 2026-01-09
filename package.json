@@ -4,7 +4,7 @@
   "description": "A package containing common React components used across my projects.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlexMan123456/components.git"
+    "url": "git+https://github.com/alextheman231/components.git"
   },
   "license": "ISC",
   "author": "alextheman",
