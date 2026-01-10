@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  tsdown: <0.19.0
+
 importers:
 
   .:
@@ -76,7 +79,7 @@ importers:
         specifier: ^6.1.19
         version: 6.1.19(react-dom@19.2.0(react@19.2.3))(react@19.2.3)
       tsdown:
-        specifier: ^0.18.3
+        specifier: <0.19.0
         version: 0.18.3(synckit@0.11.11)(typescript@5.9.3)
       typescript:
         specifier: ^5.9.3
